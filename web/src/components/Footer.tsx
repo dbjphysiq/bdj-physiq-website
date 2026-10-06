@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { SiteSettings } from "@/lib/content";
 import { Container } from "./Container";
@@ -7,7 +8,10 @@ export function Footer({ settings }: { settings: SiteSettings }) {
     <footer className="bg-ink text-slate-300">
       <Container className="grid gap-10 py-14 md:grid-cols-3">
         <div>
-          <p className="text-lg font-bold text-white">BDJ <span className="text-amber">Phys</span>IQ</p>
+          <Link href="/" aria-label="BDJ PhysIQ home" className="inline-flex items-center gap-2">
+            <Image src="/brand-mark.svg" alt="" width={36} height={36} className="h-8 w-8" />
+            <span className="text-lg font-bold text-white">BDJ <span className="text-amber">Phys</span>IQ</span>
+          </Link>
           <p className="mt-2 text-sm">{settings.tagline}</p>
           <p className="mt-1 text-sm italic text-slate-400">{settings.motto}</p>
         </div>

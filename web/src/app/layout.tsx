@@ -12,7 +12,17 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(siteUrl),
     title: { default: `${s.siteTitle} — ${s.tagline}`, template: `%s | ${s.siteTitle}` },
     description: s.seoDescription,
-    openGraph: { siteName: s.siteTitle, type: "website", locale: "en_GB" },
+    alternates: { canonical: "/" },
+    icons: { icon: "/icon.svg" },
+    openGraph: {
+      siteName: s.siteTitle,
+      type: "website",
+      locale: "en_GB",
+      url: "/",
+      title: `${s.siteTitle} — ${s.tagline}`,
+      description: s.seoDescription,
+    },
+    twitter: { card: "summary", title: s.siteTitle, description: s.seoDescription },
   };
 }
 

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "./Container";
 
@@ -10,17 +11,17 @@ const nav = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-ink/95 text-white backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-ink/95 text-white shadow-sm backdrop-blur">
       <Container className="flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-bold tracking-tight">
-          <span aria-hidden className="grid h-8 w-8 place-items-center rounded-lg bg-signal text-sm">IQ</span>
-          <span>BDJ <span className="text-amber">Phys</span>IQ</span>
+        <Link href="/" aria-label="BDJ PhysIQ home" className="flex items-center gap-2.5 font-bold tracking-tight">
+          <Image src="/brand-mark.svg" alt="" width={40} height={40} priority className="h-9 w-9" />
+          <span className="text-base">BDJ <span className="text-amber">Phys</span>IQ</span>
         </Link>
         <nav aria-label="Main" className="hidden items-center gap-7 text-sm md:flex">
           {nav.map((n) => (
             <Link key={n.href} href={n.href} className="text-slate-200 hover:text-white">{n.label}</Link>
           ))}
-          <Link href="/contact" className="rounded-lg bg-signal px-4 py-2 font-semibold hover:bg-signal-dark">Book a call</Link>
+          <Link href="/contact" className="rounded-lg bg-signal px-4 py-2 font-semibold transition-colors hover:bg-signal-dark">Book a scoping call</Link>
         </nav>
         {/* Mobile menu without JavaScript */}
         <details className="relative md:hidden">

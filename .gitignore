@@ -1,0 +1,12 @@
+node_modules
+.next
+dist
+.env
+.env*.local
+.vercel
+.sanity
+*.tsbuildinfo
+
+# Local Next.js agent guidance generated during development.
+web/AGENTS.md
+web/CLAUDE.md
