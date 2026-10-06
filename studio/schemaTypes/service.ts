@@ -14,7 +14,7 @@ export const service = defineType({
       options: { list: [
         { title: "Core service", value: "core" },
         { title: "Accelerator (in development)", value: "accelerator" },
-        { title: "NEW — Innovation track", value: "innovation" },
+        { title: "New service (innovation track)", value: "innovation" },
       ], layout: "radio" },
     }),
     defineField({ name: "order", title: "Display order", type: "number", initialValue: 99 }),

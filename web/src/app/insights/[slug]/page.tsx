@@ -34,11 +34,11 @@ export default async function PostPage({ params }: Props) {
   const isPlain = typeof body[0] === "string";
 
   return (
-    <Container className="max-w-3xl py-16 sm:py-20">
-      <Link href="/insights" className="text-sm text-signal hover:underline">← All insights</Link>
-      {post.publishedAt && <p className="mt-6 text-sm text-muted">{new Date(post.publishedAt).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</p>}
-      <h1 className="mt-2 text-4xl font-bold tracking-tight text-ink">{post.title}</h1>
-      {post.excerpt && <p className="mt-4 text-xl leading-8 text-muted">{post.excerpt}</p>}
+    <Container className="max-w-3xl pb-24 pt-12 sm:pt-16">
+      <nav aria-label="Breadcrumb" className="text-[15px] text-muted"><Link href="/insights" className="hover:text-ink">Insights</Link></nav>
+      {post.publishedAt && <p className="mt-10 text-[15px] text-muted">{new Date(post.publishedAt).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</p>}
+      <h1 className="mt-3 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">{post.title}</h1>
+      {post.excerpt && <p className="mt-6 text-xl leading-9">{post.excerpt}</p>}
       {post.mainImage?.asset && (
         <Image src={urlFor(post.mainImage).width(1200).height(630).url()} alt={post.mainImage.alt ?? ""} width={1200} height={630} className="mt-8 rounded-2xl" priority />
       )}

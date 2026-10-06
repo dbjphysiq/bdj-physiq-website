@@ -5,19 +5,23 @@ import { getPosts } from "@/lib/content";
 
 export const metadata: Metadata = { title: "Insights", description: "Notes on physics-informed AI, data engineering and responsible AI." };
 
+const fmt = (d: string) => new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+
 export default async function InsightsPage() {
   const posts = await getPosts();
   return (
-    <Container className="py-16 sm:py-20">
-      <p className="text-sm font-semibold uppercase tracking-wider text-signal">PhysIQ Notes</p>
-      <h1 className="mt-2 text-4xl font-bold tracking-tight text-ink">Insights</h1>
-      <ul className="mt-10 divide-y divide-line">
+    <Container className="pb-24 pt-16 sm:pt-24">
+      <h1 className="text-[2.6rem] font-semibold leading-[1.08] tracking-tight sm:text-6xl">Insights</h1>
+      <p className="mt-6 max-w-2xl text-lg leading-8">Notes from our work on physics-informed AI, data engineering and responsible AI.</p>
+      <ul className="mt-14 border-t border-line">
         {posts.map((p) => (
-          <li key={p.slug} className="py-6">
-            <Link href={`/insights/${p.slug}`} className="group block">
-              {p.publishedAt && <p className="text-sm text-muted">{new Date(p.publishedAt).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}</p>}
-              <h2 className="mt-1 text-2xl font-semibold text-ink group-hover:text-signal">{p.title}</h2>
-              {p.excerpt && <p className="mt-2 max-w-3xl text-muted">{p.excerpt}</p>}
+          <li key={p.slug} className="border-b border-line">
+            <Link href={`/insights/${p.slug}`} className="group grid gap-2 py-8 md:grid-cols-[200px_1fr] md:gap-10">
+              {p.publishedAt && <time dateTime={p.publishedAt} className="text-[15px] text-muted">{fmt(p.publishedAt)}</time>}
+              <div>
+                <h2 className="text-2xl font-semibold tracking-tight group-hover:text-signal">{p.title}</h2>
+                {p.excerpt && <p className="mt-3 max-w-2xl leading-7">{p.excerpt}</p>}
+              </div>
             </Link>
           </li>
         ))}

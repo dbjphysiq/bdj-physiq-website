@@ -1,6 +1,6 @@
 /**
  * Hero illustration: a process forecast whose uncertainty band (amber)
- * narrows as measured data arrives. Pure SVG — no image download.
+ * narrows as measured data arrives. Pure SVG, no image download.
  */
 export function UncertaintyChart() {
   return (

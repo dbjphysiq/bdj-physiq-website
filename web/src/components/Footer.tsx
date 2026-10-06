@@ -5,37 +5,37 @@ import { Container } from "./Container";
 
 export function Footer({ settings }: { settings: SiteSettings }) {
   return (
-    <footer className="bg-ink text-slate-300">
-      <Container className="grid gap-10 py-14 md:grid-cols-3">
+    <footer className="border-t border-line bg-paper text-slate">
+      <Container className="grid gap-12 py-16 md:grid-cols-[2fr_1fr_1.4fr]">
         <div>
-          <Link href="/" aria-label="BDJ PhysIQ home" className="inline-flex items-center gap-2">
-            <Image src="/brand-mark.svg" alt="" width={36} height={36} className="h-8 w-8" />
-            <span className="text-lg font-bold text-white">BDJ <span className="text-amber">Phys</span>IQ</span>
+          <Link href="/" aria-label="BDJ PhysIQ home" className="inline-flex items-center gap-2.5">
+            <Image src="/brand-mark.svg" alt="" width={32} height={32} className="h-8 w-8" />
+            <span className="font-display text-lg font-semibold text-ink">BDJ PhysIQ</span>
           </Link>
-          <p className="mt-2 text-sm">{settings.tagline}</p>
-          <p className="mt-1 text-sm italic text-slate-400">{settings.motto}</p>
+          <p className="mt-4 max-w-xs leading-7">{settings.tagline}.</p>
+          <p className="mt-1 font-display text-ink">{settings.motto}</p>
         </div>
-        <div className="text-sm">
-          <p className="font-semibold text-white">Explore</p>
-          <ul className="mt-3 space-y-2">
-            <li><Link href="/services" className="hover:text-white">Services</Link></li>
-            <li><Link href="/about" className="hover:text-white">About and method</Link></li>
-            <li><Link href="/insights" className="hover:text-white">Insights</Link></li>
-            <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
+        <nav aria-label="Footer" className="text-[15px]">
+          <p className="font-medium text-ink">Company</p>
+          <ul className="mt-4 space-y-3">
+            <li><Link href="/services" className="hover:text-ink">Services</Link></li>
+            <li><Link href="/about" className="hover:text-ink">About and method</Link></li>
+            <li><Link href="/insights" className="hover:text-ink">Insights</Link></li>
+            <li><Link href="/contact" className="hover:text-ink">Contact</Link></li>
           </ul>
-        </div>
-        <div className="text-sm">
-          <p className="font-semibold text-white">Contact</p>
-          <ul className="mt-3 space-y-2">
-            <li><a href={`mailto:${settings.contactEmail}`} className="hover:text-white">{settings.contactEmail}</a></li>
-            {settings.contactPhone && <li><a href={`tel:${settings.contactPhone.replace(/\s/g, "")}`} className="hover:text-white">{settings.contactPhone}</a></li>}
+        </nav>
+        <div className="text-[15px]">
+          <p className="font-medium text-ink">Contact</p>
+          <ul className="mt-4 space-y-3">
+            <li><a href={`mailto:${settings.contactEmail}`} className="hover:text-ink">{settings.contactEmail}</a></li>
+            {settings.contactPhone && <li><a href={`tel:${settings.contactPhone.replace(/\s/g, "")}`} className="hover:text-ink">{settings.contactPhone}</a></li>}
             {settings.location && <li>{settings.location}</li>}
-            <li>English and French · within one hour of CET</li>
+            <li>English and French, within one hour of CET</li>
           </ul>
         </div>
       </Container>
-      <div className="border-t border-white/10">
-        <Container className="py-5 text-xs text-slate-400">
+      <div className="border-t border-line">
+        <Container className="py-6 text-sm text-muted">
           © {new Date().getFullYear()} {settings.legalLine}
         </Container>
       </div>

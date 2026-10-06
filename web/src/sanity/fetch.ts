@@ -11,7 +11,7 @@ import { isSanityConfigured } from "./env";
  *
  * When an editor publishes in Sanity, the webhook calls /api/revalidate with
  * the document's tags, Next.js expires every cached response and page that
- * used them, and the next visitor gets freshly rendered HTML — no redeploy.
+ * used them, and the next visitor gets freshly rendered HTML without a redeploy.
  */
 export async function sanityFetch<T>({
   query,
