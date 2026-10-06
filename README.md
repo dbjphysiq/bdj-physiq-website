@@ -1,4 +1,4 @@
-# BDJ PhysIQ Technologies — website
+# BDJ PhysIQ Technologies website
 
 A fast bilingual-ready marketing site built with **Next.js (App Router) + React + Tailwind CSS**, content managed in **Sanity**, code on **GitHub**, hosted on **Vercel**.
 
@@ -8,11 +8,11 @@ A fast bilingual-ready marketing site built with **Next.js (App Router) + React 
                                               │  build + deploy                    │
                                               ▼                                    │ webhook (signed POST)
                                     https://bdjphysiq.com  ◄── /api/revalidate ◄───┘
-                                    (static pages, cached)     expires cache tags → fresh page on next visit
+                                    (static pages, cached)     expires cache tags > fresh page on next visit
 ```
 
-- **Code updates:** every `git push` to `main` → Vercel builds and publishes automatically.
-- **Content updates:** an editor clicks **Publish** in Sanity Studio → Sanity calls `/api/revalidate` → the affected pages refresh within seconds. **No code deployment.**
+- **Code updates:** every `git push` to `main` triggers a build and deployment on Vercel.
+- **Content updates:** an editor clicks **Publish** in Sanity Studio, Sanity calls `/api/revalidate`, and the affected pages refresh within seconds. **No code deployment.**
 
 ## What is in this repository
 
@@ -29,13 +29,13 @@ The website **works before Sanity is connected**: it falls back to the copy in `
 
 ---
 
-## Step 0 — What you need
+## Step 0: What you need
 
 1. **Node.js 22** (`node -v`) and **Git** (`git --version`) on your computer.
-2. Free accounts on **GitHub**, **Vercel** (sign up *with* GitHub) and **Sanity** (sanity.io — sign up with the same Google or GitHub account).
+2. Free accounts on **GitHub**, **Vercel** (sign up *with* GitHub) and **Sanity** (sanity.io, sign up with the same Google or GitHub account).
 3. About 45 minutes.
 
-## Step 1 — Run the website locally (no accounts needed)
+## Step 1: Run the website locally (no accounts needed)
 
 ```bash
 cd web
@@ -45,9 +45,9 @@ npm run dev
 
 Open http://localhost:3000. You should see the full site with the seed content.
 
-## Step 2 — Create the Sanity project and Studio
+## Step 2: Create the Sanity project and Studio
 
-1. Go to **https://www.sanity.io/manage** → **Create new project**. Name: `BDJ PhysIQ Website`. Choose the **Free** plan. Create a dataset called **`production`** with **Public** visibility (the website only reads published content).
+1. Go to **https://www.sanity.io/manage** > **Create new project**. Name: `BDJ PhysIQ Website`. Choose the **Free** plan. Create a dataset called **`production`** with **Public** visibility (the website only reads published content).
 2. Copy the **Project ID** shown at the top of the project page (8 characters, e.g. `a1b2c3d4`).
 3. In the terminal:
 
@@ -74,9 +74,9 @@ npm run deploy                # hosts it at https://bdjphysiq.sanity.studio
 
 If `bdjphysiq` is taken, change `studioHost` in `studio/sanity.cli.ts` and run it again.
 
-6. **Invite editors:** sanity.io/manage → your project → **Members** → **Invite** (role *Editor*). They only need a browser.
+6. **Invite editors:** sanity.io/manage > your project > **Members** > **Invite** (role *Editor*). They only need a browser.
 
-## Step 3 — Connect the website to Sanity (locally)
+## Step 3: Connect the website to Sanity (locally)
 
 ```bash
 cd ../web
@@ -95,9 +95,9 @@ SANITY_REVALIDATE_SECRET=<run: openssl rand -base64 32>
 
 Restart `npm run dev`. The pages now come from Sanity (the terminal shows the fetches).
 
-## Step 4 — Put the code on GitHub
+## Step 4: Put the code on GitHub
 
-1. On github.com → **New repository** → name `bdj-physiq-website` → **Private** → do **not** add a README → **Create**.
+1. On github.com > **New repository** > name `bdj-physiq-website` > **Private** > do **not** add a README > **Create**.
 2. From the repository root on your computer:
 
 ```bash
@@ -111,11 +111,11 @@ git push -u origin main
 
 `.env`, `.env.local` and `node_modules` are ignored, so no secrets are uploaded.
 
-## Step 5 — Deploy on Vercel (code updates on every push)
+## Step 5: Deploy on Vercel (code updates on every push)
 
-1. vercel.com → **Add New… → Project** → **Import** `bdj-physiq-website` from GitHub.
+1. vercel.com > **Add New... > Project** > **Import** `bdj-physiq-website` from GitHub.
 2. **Root Directory:** click **Edit** and choose **`web`**. (Framework preset is detected as **Next.js**. Leave build settings as they are.)
-3. **Environment Variables** — add all five, for *Production, Preview and Development*:
+3. **Environment Variables**, add all five, for *Production, Preview and Development*:
 
 | Name | Value |
 |---|---|
@@ -126,17 +126,17 @@ git push -u origin main
 | `SANITY_REVALIDATE_SECRET` | the same long random string as in `.env.local` |
 
 4. Click **Deploy**. After about a minute you get a live URL such as `https://bdj-physiq-website.vercel.app`.
-5. **Custom domain:** Project → **Settings → Domains** → add `bdjphysiq.com` and follow the DNS instructions from Vercel at your domain registrar.
+5. **Custom domain:** Project > **Settings > Domains** > add `bdjphysiq.com` and follow the DNS instructions from Vercel at your domain registrar.
 
 **The code workflow is now automatic:**
 
-- `git push` to **`main`** → production build and deployment.
-- `git push` to any other branch or a pull request → a separate **Preview** URL to review changes before merging.
+- `git push` to **`main`** > production build and deployment.
+- `git push` to any other branch or a pull request > a separate **Preview** URL to review changes before merging.
 - `web/vercel.json` skips a website build when a commit only changes `studio/` or `seed/`.
 
-Environment variables are read at build time. **If you add or change one, redeploy** (Deployments → ⋯ → Redeploy).
+Environment variables are read at build time. **If you add or change one, redeploy** (Deployments > ⋯ > Redeploy).
 
-## Step 6 — Content updates without deployment (on-demand revalidation)
+## Step 6: Content updates without deployment (on-demand revalidation)
 
 ### How it works
 
@@ -147,7 +147,7 @@ Environment variables are read at build time. **If you add or change one, redepl
 
 ### The code (already in the project)
 
-**`web/src/sanity/fetch.ts`** — the cached, tagged fetch:
+**`web/src/sanity/fetch.ts`**, the cached, tagged fetch:
 
 ```ts
 import type { QueryParams } from "next-sanity";
@@ -188,7 +188,7 @@ export async function getService(slug: string) {
 }
 ```
 
-**`web/src/app/api/revalidate/route.ts`** — the webhook endpoint:
+**`web/src/app/api/revalidate/route.ts`**, the webhook endpoint:
 
 ```ts
 import { revalidateTag } from "next/cache";
@@ -233,7 +233,7 @@ export async function POST(req: NextRequest) {
 
 The webhook is created in the **Sanity** dashboard. The matching secret lives in **Vercel** (the `SANITY_REVALIDATE_SECRET` environment variable from Step 5). Both must hold the same string.
 
-1. sanity.io/manage → your project → **API** → **Webhooks** → **Create webhook**.
+1. sanity.io/manage > your project > **API** > **Webhooks** > **Create webhook**.
 2. Fill in exactly:
 
 | Field | Value |
@@ -254,23 +254,23 @@ The webhook is created in the **Sanity** dashboard. The matching secret lives in
 
 ### Test the complete loop
 
-1. Open the Studio → **Homepage and site settings** → change the **Hero headline** → **Publish**.
-2. In sanity.io/manage → API → Webhooks → your webhook → **⋯ → Show attempts log**: the latest attempt should show **200** and a response like `{"revalidated":true,"tags":["siteSettings"]}`.
+1. Open the Studio > **Homepage and site settings** > change the **Hero headline** > **Publish**.
+2. In sanity.io/manage > API > Webhooks > your webhook > **⋯ > Show attempts log**: the latest attempt should show **200** and a response like `{"revalidated":true,"tags":["siteSettings"]}`.
 3. Reload the website: the new headline is live, with no deployment in Vercel's list.
 
 ### Tested before delivery
 
 - `next build` succeeds: 22 routes, all static except `/api/revalidate`.
 - `/api/revalidate` answers **200** for a correctly signed request and **401** for a forged signature.
-- A full loop was simulated against a mock Sanity API: page shows version A → content changed to B → page still A (cached) → signed webhook → **next visit shows B**, with no rebuild.
+- A full loop was simulated against a mock Sanity API: page shows version A > content changed to B > page still A (cached) > signed webhook > **next visit shows B**, with no rebuild.
 
 ## Day-to-day use
 
-| I want to… | Do this |
+| I want to... | Do this |
 |---|---|
-| Edit text, services or articles | Studio → edit → **Publish**. Live within seconds. |
-| Add a new service | Studio → **Services** → **+** → fill in → **Publish**. It appears on `/services` and gets its own page. |
-| Write an article | Studio → **Insight articles** → **+** → **Publish**. |
+| Edit text, services or articles | Studio > edit > **Publish**. Live within seconds. |
+| Add a new service | Studio > **Services** > **+** > fill in > **Publish**. It appears on `/services` and gets its own page. |
+| Write an article | Studio > **Insight articles** > **+** > **Publish**. |
 | Change layout, design or code | Edit in `web/`, test with `npm run dev`, then `git push` to `main`. |
 | Preview a code change safely | Push to a branch and open the Preview URL Vercel posts on the pull request. |
 | Change the Studio (fields, schemas) | Edit `studio/`, run `npm run deploy` in `studio/` (or let the GitHub Action do it). |
@@ -281,12 +281,12 @@ The webhook is created in the **Sanity** dashboard. The matching secret lives in
 2. Add a GROQ query in `web/src/sanity/queries.ts` and a getter in `web/src/lib/content.ts` with tags `["<type>", "<type>:" + slug]`.
 3. Add `"<type>"` to the webhook **Filter** in Sanity.
 
-## Optional — automatic Studio deployment
+## Optional: automatic Studio deployment
 
 `.github/workflows/deploy-studio.yml` redeploys the Studio whenever `studio/` changes on `main`:
 
-1. sanity.io/manage → API → **Tokens** → **Add API token** → name `GitHub deploy`, permission **Deploy Studio**.
-2. GitHub repo → Settings → Secrets and variables → Actions:
+1. sanity.io/manage > API > **Tokens** > **Add API token** > name `GitHub deploy`, permission **Deploy Studio**.
+2. GitHub repo > Settings > Secrets and variables > Actions:
    - **Secret** `SANITY_DEPLOY_TOKEN` = the token
    - **Variable** `SANITY_STUDIO_PROJECT_ID` = your Project ID
 
@@ -298,13 +298,13 @@ The webhook is created in the **Sanity** dashboard. The matching secret lives in
 | Webhook log shows **500 "SANITY_REVALIDATE_SECRET is not set"** | Add the variable in Vercel and redeploy. |
 | Webhook shows **404** | Wrong URL: it must end in `/api/revalidate`, on the production domain. |
 | 200 but the page is unchanged | Check the webhook **Filter** includes the document type, and that **Drafts** is off (publish, don't just save). Reload the page once more. |
-| Site shows the seed copy, not Sanity | `NEXT_PUBLIC_SANITY_PROJECT_ID` is missing in Vercel → add it and redeploy. |
+| Site shows the seed copy, not Sanity | `NEXT_PUBLIC_SANITY_PROJECT_ID` is missing in Vercel > add it and redeploy. |
 | New service returns 404 | Its slug is empty: open it in the Studio, click **Generate** next to Slug, publish. |
-| Vercel build fails with "Root Directory" errors | Project → Settings → General → Root Directory must be `web`. |
+| Vercel build fails with "Root Directory" errors | Project > Settings > General > Root Directory must be `web`. |
 
 ## Before launch
 
 - Register **bdjphysiq.com** and switch the contact email to an address on that domain (update it in the Studio).
 - Add the RCCM number and tax ID to the footer legal line once registration is complete.
-- Upload a founder photo in the Studio (About page → Founder photo, with alt text).
+- Upload a founder photo in the Studio (About page > Founder photo, with alt text).
 - Have a lawyer confirm the service commitments, and check the statistics and dates flagged in the website copy.
