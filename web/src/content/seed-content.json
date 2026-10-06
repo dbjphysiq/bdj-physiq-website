@@ -1,0 +1,272 @@
+{
+  "siteSettings": {
+    "siteTitle": "BDJ PhysIQ Technologies",
+    "tagline": "Physics-informed AI for industry and institutions",
+    "motto": "Measure. Model. Deliver.",
+    "heroHeadline": "Decisions you can verify — built on physics and clean data.",
+    "heroSubheadline": "We model your process with the laws of physics and your own data, then show how certain each forecast is. You get less waste, less downtime and fewer surprises, with documentation your auditors can read.",
+    "primaryCta": { "label": "Book a 30-minute scoping call", "href": "/contact" },
+    "secondaryCta": { "label": "See how a pilot works", "href": "/about#method" },
+    "trustLine": [
+      "Peer-reviewed methods (JASA, 2026)",
+      "Fixed-price pilots",
+      "Your data stays in your systems",
+      "English and French"
+    ],
+    "valueHeading": "AI projects rarely fail on the maths. They fail on the data.",
+    "valueBody": "Most AI pilots stall for ordinary reasons. The data is not ready. The model cannot explain itself. Nobody owns it after the pilot ends. We start where projects break.",
+    "valuePillars": [
+      { "title": "Measure", "text": "We audit your data, fix its foundations and agree the few numbers that matter." },
+      { "title": "Model", "text": "We build forecasts that respect the physics of your process — heat, moisture, wear, flow — and state how certain each one is." },
+      { "title": "Deliver", "text": "We put the work into your systems and train your people. Everything is documented, so your team can run it without us." }
+    ],
+    "stats": [
+      { "value": "60%", "caption": "of AI projects without AI-ready data will be abandoned through 2026.", "sourceLabel": "Gartner, 2025", "sourceUrl": "https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk" },
+      { "value": "US$1.4tn", "caption": "a year: the cost of unplanned downtime for the world's 500 largest companies — 11% of revenue.", "sourceLabel": "Siemens, 2024", "sourceUrl": "https://assets.new.siemens.com/siemens/assets/api/uuid:1b43afb5-2d07-47f7-9eb7-893fe7d0bc59/TCOD-2024_original.pdf" },
+      { "value": "31 Dec 2027", "caption": "Mainstream maintenance ends for SAP ECC 6 (EHP 6–8). 54% of DACH SAP user firms still run ECC.", "sourceLabel": "DSAG, 2026", "sourceUrl": "https://impulsant.dsag.de/formate/pressemeldung/dsag-investment-report-2026-companies-are-investing-more-selectively-ai-is-becoming-established-cloud-computing-is-being-put-to-the-test/" },
+      { "value": "44", "caption": "African countries now have data protection laws, and enforcement began to bite in 2025.", "sourceLabel": "Digital Policy Alert, 2026", "sourceUrl": "https://digitalpolicyalert.org/blog/data-protection-in-africa-roundup" }
+    ],
+    "ctaHeading": "Bring us one decision you want to get right.",
+    "ctaBody": "In 30 minutes we'll tell you whether your data can support it, what a pilot would cost and how we would measure success. No slides, no obligation.",
+    "contactEmail": "bainamndidaliwa@gmail.com",
+    "contactPhone": "+237 674 137 498",
+    "location": "Maroua, Far North Region, Cameroon",
+    "legalLine": "BDJ PhysIQ Technologies S.A.R.L. (in formation, OHADA single-member SARL), Maroua, Far North Region, Cameroon.",
+    "seoDescription": "Physics-informed AI, data engineering and AI governance for manufacturers and public institutions. Fixed-price pilots, documented results, English and French."
+  },
+  "aboutPage": {
+    "heading": "Science-grade AI, built from Africa for industry and institutions",
+    "mission": "We combine physics, data engineering and responsible AI to help industrial companies and public institutions turn data into reliable decisions that cut waste, downtime and risk, while training a new generation of African AI engineers.",
+    "vision": "Trustworthy, science-grade AI for every factory and public institution, and proof that world-class AI engineering can be built from Africa.",
+    "approach": [
+      { "title": "Physics first", "text": "We start from the laws that govern your process: heat, mass, moisture, wear. Models built this way need less data and stay within physically possible values." },
+      { "title": "Uncertainty stated, not hidden", "text": "Every forecast comes with a range and an honest account of its limits — the same methods as our founder's peer-reviewed work (JASA, 2026)." },
+      { "title": "Data foundations before models", "text": "We test and reconcile data before we trust it." },
+      { "title": "Humans in charge", "text": "Every model has a named owner, and every automated action has an approval step." },
+      { "title": "Documented by default", "text": "You receive the code, the assumptions, the validation results and a run-book." }
+    ],
+    "method": [
+      { "title": "Discover", "text": "Review sources, business logic, users and acceptance criteria with your team." },
+      { "title": "Build", "text": "Develop in version control, with documented assumptions and reviewable changes." },
+      { "title": "Test", "text": "Check data quality, reconcile against an agreed baseline, and measure accuracy and uncertainty." },
+      { "title": "Hand over", "text": "Deliver code, documentation, test evidence and operating instructions, with a walkthrough." }
+    ],
+    "values": [
+      { "title": "Scientific rigour", "text": "We test claims before we make them." },
+      { "title": "Integrity", "text": "We say what we know, what we don't, and what we will not claim." },
+      { "title": "Responsible by design", "text": "Governance is built in from the first day." },
+      { "title": "Client outcomes", "text": "We measure success in your numbers, not our outputs." },
+      { "title": "Local talent, global standards", "text": "We build African expertise to international benchmarks." }
+    ],
+    "founderName": "Dr Daliwa Joseph Bainamndi",
+    "founderRole": "Founder and Managing Director",
+    "founderBio": "A physicist and data scientist working at the meeting point of physics-informed machine learning, data engineering and AI governance.",
+    "founderCredentials": [
+      "PhD in Physics, University of Ngaoundéré",
+      "MSc AI and Data Science, with Distinction, University of Hull (Chevening Scholar)",
+      "Associate Researcher, Laboratoire Ondes et Milieux Complexes (LOMC, UMR CNRS 6294, Université Le Havre Normandie)",
+      "Fulbright Visiting Researcher, University of Missouri",
+      "Co-author, “Physics-Informed Machine Learning for Micro-Perforated Panels: Reproducible Prediction, Uncertainty, and Design Optimization”, J. Acoust. Soc. Am. 160, 1001–1010 (2026)",
+      "2026 Africa AI Policy Fellow; Central Africa Chapter Lead, Africa AI Governance Index",
+      "President, Mandela Washington Fellows Association of Cameroon"
+    ],
+    "publicationUrl": "https://doi.org/10.1121/10.0044535",
+    "outlook": [
+      { "title": "Accelerators", "text": "We are turning repeat work into the PhysIQ Migrate, Sentinel, Twin and Assure toolkits." },
+      { "title": "Certification", "text": "We are building security controls aligned with ISO/IEC 27001 and targeting certification in FY2029." },
+      { "title": "Innovation track", "text": "New services for packaging compliance, AI Act evidence, governed copilots and African data protection readiness." },
+      { "title": "Talent", "text": "We are growing PhysIQ Academy into a pipeline of African AI engineers who work to international standards." }
+    ]
+  },
+  "services": [
+    {
+      "title": "Industrial AI and process modelling",
+      "slug": "industrial-ai-process-modelling",
+      "category": "core",
+      "order": 1,
+      "tagline": "Models that obey your process physics, and tell you how sure they are.",
+      "cardBullets": ["Predict failures before they stop the line", "Find the settings that cut scrap, energy and rework", "Every forecast comes with a stated uncertainty range"],
+      "problem": "Your line produces different results on different days with the same inputs, and nobody can say why. Purely data-driven models break when conditions change, and they give one number with no sense of risk. Unplanned downtime costs the world's 500 largest companies US$1.4 trillion a year, and the average facility loses 27 hours a month (Siemens, 2024).",
+      "features": ["Predictive maintenance models for critical assets", "Process optimisation: recommended set-points for quality, yield and throughput", "Quality and yield analytics that link defects to process variables", "Energy and waste analytics (steam, power, scrap, rework)", "Forecasts with stated uncertainty, such as prediction intervals from conformal methods", "Model documentation: data used, assumptions, limits and validation results"],
+      "benefits": ["Physics constraints mean the model needs less data and stays within physically possible values", "Operators see how confident each forecast is, so they know when to act and when to check", "Less unplanned downtime, scrap and energy per tonne — targets agreed with you and measured against your own baseline"],
+      "audience": "Plant managers, process and reliability engineers, and operations directors in paper, packaging, corrugated board, building materials and food processing — and large industrial firms in Central and West Africa.",
+      "ctaLabel": "Discuss a process-modelling pilot",
+      "sources": [{ "label": "Siemens, The True Cost of Downtime 2024", "url": "https://assets.new.siemens.com/siemens/assets/api/uuid:1b43afb5-2d07-47f7-9eb7-893fe7d0bc59/TCOD-2024_original.pdf" }]
+    },
+    {
+      "title": "Data engineering and migration",
+      "slug": "data-engineering-migration",
+      "category": "core",
+      "order": 2,
+      "tagline": "A clean, tested data layer that survives your ERP change.",
+      "cardBullets": ["SAP-to-Snowflake mapping and dbt models", "Automated data-quality and reconciliation tests", "Pipelines run by Airflow, deployed through Azure DevOps"],
+      "problem": "AI and reporting depend on data that is often scattered, unreconciled and locked in legacy ERP. In the DACH region, 54% of SAP user firms still run SAP ECC (DSAG, 2026), and mainstream maintenance for ECC 6 EHP 6–8 ends on 31 December 2027. Meanwhile, 63% of organisations lack, or are unsure they have, data practices ready for AI (Gartner, 2025).",
+      "features": ["SAP-to-Snowflake source-to-target mapping", "Ingestion pipelines orchestrated with Airflow", "dbt models with documented lineage", "Automated data-quality and reconciliation tests (row counts, totals, business rules)", "CI/CD and environments in Azure DevOps", "Run-book and hand-over documentation"],
+      "benefits": ["One governed data layer that feeds analytics and AI, whatever happens to your ERP", "Reconciliation tests prove the migrated numbers match the source", "Extra data engineering capacity without a 7.7-month hiring cycle (Bitkom, 2025)"],
+      "audience": "CIOs, heads of data, and SAP and BI leads at manufacturers moving off ECC or building a cloud data platform — and institutions consolidating fragmented databases.",
+      "ctaLabel": "Discuss your migration",
+      "sources": [
+        { "label": "DSAG Investment Report 2026", "url": "https://impulsant.dsag.de/formate/pressemeldung/dsag-investment-report-2026-companies-are-investing-more-selectively-ai-is-becoming-established-cloud-computing-is-being-put-to-the-test/" },
+        { "label": "Gartner, 2025", "url": "https://www.gartner.com/en/newsroom/press-releases/2025-02-26-lack-of-ai-ready-data-puts-ai-projects-at-risk" },
+        { "label": "Bitkom, 2025", "url": "https://www.bitkom.org/Presse/Presseinformation/Deutschland-fehlen-IT-Fachkraefte" }
+      ]
+    },
+    {
+      "title": "Analytics and reporting",
+      "slug": "analytics-reporting",
+      "category": "core",
+      "order": 3,
+      "tagline": "One definition of every KPI, from shop floor to board.",
+      "cardBullets": ["Agreed KPI definitions, written down", "Factory and management dashboards in Power BI, Tableau or Qlik Sense", "Numbers that match the source systems"],
+      "problem": "Different teams report different numbers for the same KPI. Dashboards multiply, trust falls, and meetings turn into arguments about data instead of decisions.",
+      "features": ["A KPI dictionary: definitions, formulas, owners and data sources", "Factory dashboards (OEE, downtime, scrap, energy) and management dashboards", "Built in Qlik Sense, Power BI or Tableau — whichever you already use", "Data-quality flags shown on the dashboard itself", "User training and a maintenance guide"],
+      "benefits": ["One version of each number, traceable to its source", "Faster, calmer performance reviews", "Dashboards your team can extend without us"],
+      "audience": "Operations and finance leaders, plant controllers, and programme managers in public institutions and NGOs who need reliable reporting.",
+      "ctaLabel": "Discuss your dashboards",
+      "sources": []
+    },
+    {
+      "title": "AI solutions and software",
+      "slug": "ai-solutions-software",
+      "category": "core",
+      "order": 4,
+      "tagline": "Scoped prototypes that reach production, with people in control.",
+      "cardBullets": ["Document assistants that answer from your manuals and cite the page", "Integration with the systems you already run", "Human review built into every workflow"],
+      "problem": "Generative-AI pilots are everywhere, but few change results. A 2025 MIT study found about 95% of enterprise GenAI pilots showed no measurable P&L impact. The usual gaps are a vague scope, weak integration and no human review.",
+      "features": ["A scoped prototype with written success criteria", "Document assistants (retrieval-augmented generation) that answer from your technical manuals and procedures and cite the source page", "Integration with your existing systems and identity controls", "Human review workflows: who approves, who overrides, what is logged", "A disclosure notice for users, aligned with the EU AI Act transparency rules in force since 2 August 2026"],
+      "benefits": ["Technicians find the right procedure faster, with the source shown", "No black boxes: every answer is traceable and every decision has a human owner", "A clear go/no-go at the end of the prototype, before you invest more"],
+      "audience": "Maintenance and engineering teams with large manual libraries, and public institutions and NGOs with policy or procedure archives.",
+      "ctaLabel": "Scope an AI prototype",
+      "sources": [{ "label": "MIT NANDA via Fortune, 2025", "url": "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/" }]
+    },
+    {
+      "title": "AI governance and advisory",
+      "slug": "ai-governance-advisory",
+      "category": "core",
+      "order": 5,
+      "tagline": "Responsible AI you can defend to regulators, boards and citizens.",
+      "cardBullets": ["AI strategies, risk and conformity assessments", "Data protection compliance and responsible-AI policies", "Evidence studies and MERL systems"],
+      "problem": "Rules are arriving faster than organisations can absorb them. In Africa, fewer than 15 countries have a national AI strategy, and the hard part is putting strategies into practice (OECD, 2026). In Europe, the AI Act's obligations phase in from 2025 to 2028. Donors and NGOs need evidence that holds up.",
+      "features": ["National, sectoral and organisational AI strategies, with operational roadmaps", "AI risk and conformity assessments", "Data protection compliance: records of processing, impact assessments, policies", "Responsible-AI policies and oversight structures", "Evidence studies and MERL (monitoring, evaluation, research and learning) frameworks and data systems", "Bilingual (English/French) reports and briefings"],
+      "benefits": ["Strategies that name owners, budgets and milestones, not just ambitions", "Fewer compliance surprises, with documentation ready for regulators or auditors", "Evidence that funders and boards can rely on"],
+      "audience": "Ministries and regulators, public agencies, international organisations, funders, NGOs, and companies deploying AI in regulated settings.",
+      "ctaLabel": "Discuss your governance needs",
+      "sources": [{ "label": "OECD, AI governance in Africa, 2026", "url": "https://www.oecd.org/en/publications/oecd-artificial-intelligence-case-studies_c517fcf5-en/ai-governance-in-africa_1ff55135-en.html" }]
+    },
+    {
+      "title": "PhysIQ Academy",
+      "slug": "physiq-academy",
+      "category": "core",
+      "order": 6,
+      "tagline": "Build the team that runs it after we leave.",
+      "cardBullets": ["Cohort training in data, AI and digital skills", "Team upskilling tied to your own projects", "Delivered in English or French"],
+      "problem": "Skills are scarce everywhere. Germany has about 109,000 unfilled IT roles (Bitkom, 2025). The EU had 10.5 million ICT specialists in 2025 against a 2030 target of 20 million (EU Digital Decade, 2026).",
+      "features": ["Training cohorts in data, AI and digital skills", "Team upskilling built around your own data and tools", "Hands-on projects and assessments", "Delivery in English or French, remote or blended"],
+      "benefits": ["Your people can maintain and extend what we build", "Faster adoption, because teams understand the models they use", "For public and donor clients: documented knowledge transfer and national capacity building"],
+      "audience": "Client teams after a project, public institutions, universities, and professionals moving into data and AI roles.",
+      "ctaLabel": "Request in-house training",
+      "sources": [
+        { "label": "Bitkom, 2025", "url": "https://www.bitkom.org/Presse/Presseinformation/Deutschland-fehlen-IT-Fachkraefte" },
+        { "label": "EU State of the Digital Decade, 2026", "url": "https://digital-skills-jobs.europa.eu/en/latest/news/state-digital-decade-2026-without-urgent-action-eu-risks-missing-out-20-million-ict" }
+      ]
+    },
+    {
+      "title": "PhysIQ accelerators",
+      "slug": "physiq-accelerators",
+      "category": "accelerator",
+      "order": 7,
+      "tagline": "Reusable kits that make every project faster and safer.",
+      "statusNote": "In development — we use and refine these kits on client projects. Ask us what is ready today.",
+      "cardBullets": ["Migrate · Sentinel · Twin · Assure"],
+      "problem": "Many projects rebuild the same foundations from scratch. Our accelerators package tested methods, so each project starts further ahead.",
+      "features": ["PhysIQ Migrate — SAP → Snowflake → dbt mapping templates, migration kits and automated reconciliation tests", "PhysIQ Sentinel — predictive-maintenance toolkit: data checks, failure-risk models, alert logic with stated uncertainty", "PhysIQ Twin — physics-informed process twin (for example corrugator moisture, heat and warp) with uncertainty bands", "PhysIQ Assure — governance toolkit aligned with ISO/IEC 42001, the EU AI Act and Cameroon's data protection law"],
+      "benefits": ["Shorter migrations with test evidence that the numbers match", "Earlier warnings that operators can trust and act on", "See the likely effect of a set-point change before you make it", "A faster, repeatable path to documented, responsible AI"],
+      "audience": "Manufacturers leaving SAP ECC, reliability and maintenance teams, process engineers, and compliance, risk and AI leads.",
+      "ctaLabel": "Ask what's ready today",
+      "sources": []
+    },
+    {
+      "title": "Packaging Compliance Data Engine",
+      "slug": "packaging-compliance-data-engine",
+      "category": "innovation",
+      "order": 8,
+      "tagline": "Turn the new EU packaging rules into data you already hold.",
+      "whyNow": "12 Aug 2026 — the EU Packaging and Packaging Waste Regulation (PPWR) now applies.",
+      "cardBullets": ["Compliance data per SKU, traceable to ERP", "EPR reporting and batch traceability", "Physics-informed minimisation modelling"],
+      "problem": "The PPWR has applied since 12 August 2026: substance limits, recyclability, minimisation, EPR registration and reporting, and labels with batch or serial numbers. Paper and cardboard packaging get no specific exemptions. The data exists, but it is spread across ERP, quality systems, supplier sheets and spreadsheets — and customers and authorities now want it per product, per batch and on demand.",
+      "features": ["A compliance data product per SKU: materials, weights, substances, recyclability evidence", "Data lineage from ERP (including SAP) to each compliance record", "EPR quantity reporting by packaging type and country", "Batch and serial traceability that links labels to production data", "Minimisation modelling: physics-informed estimates of board strength against grammage, to find the lightest design that still performs"],
+      "benefits": ["One audited source for packaging compliance data", "Faster answers to customer and regulator data requests", "Material savings from minimisation, measured against your own baseline"],
+      "audience": "Corrugated and packaging converters, paper and board producers, and the brand owners who need conformity data from their suppliers.",
+      "ctaLabel": "Register early-partner interest",
+      "sources": [
+        { "label": "Gleiss Lutz — New EU Packaging Regulation", "url": "https://www.gleisslutz.com/en/know-how/new-eu-packaging-regulation-key-requirements-august-2026" },
+        { "label": "Reuschlaw — PPWR applies from 12 August 2026", "url": "https://www.reuschlaw.de/en/news/the-new-eu-packaging-regulation-ppwr-applies-from-12-august-2026/" }
+      ]
+    },
+    {
+      "title": "AI Act Evidence Lab",
+      "slug": "ai-act-evidence-lab",
+      "category": "innovation",
+      "order": 9,
+      "tagline": "Test results and documents that prove your AI is accurate and robust.",
+      "whyNow": "2 Dec 2027 and 2 Aug 2028 — EU AI Act high-risk obligations apply.",
+      "cardBullets": ["AI system inventory and classification", "Accuracy, robustness and uncertainty tests", "Technical documentation and gap plan"],
+      "problem": "The AI Act's transparency duties have applied since 2 August 2026. High-risk obligations follow on 2 December 2027, and on 2 August 2028 for AI embedded in regulated products such as machinery. Governance policies say a model must be “accurate and robust”, but few manufacturers can produce the test evidence to show it.",
+      "features": ["Inventory and classification of your AI systems against the AI Act", "Technical tests of accuracy, robustness and drift, including checks on how often a model's stated ranges actually hold", "Draft technical documentation, a risk-management file and a post-market monitoring plan", "A check of chatbots and document assistants against the transparency rules", "A gap report with a dated plan to the 2027 and 2028 deadlines"],
+      "benefits": ["Evidence, not just policy — ready for customers and auditors", "Early sight of gaps while there is time to fix them", "Links directly to the PhysIQ Assure toolkit"],
+      "audience": "Machinery and equipment makers that embed AI in products, manufacturers that use AI at work, and compliance and quality leads. We prepare evidence and documentation; we are not a notified body and do not issue conformity certificates.",
+      "ctaLabel": "Register early-partner interest",
+      "sources": [
+        { "label": "Gibson Dunn — AI Act omnibus agreement, 2026", "url": "https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/" }
+      ]
+    },
+    {
+      "title": "Governed Operations Copilots",
+      "slug": "governed-operations-copilots",
+      "category": "innovation",
+      "order": 10,
+      "tagline": "Maintenance assistants that cite their sources, show their confidence and ask before they act.",
+      "whyNow": "About 3 in 4 firms plan agentic AI within two years; only about 1 in 5 has a mature governance model (Deloitte, 2026).",
+      "cardBullets": ["Grounded in your CMMS, sensors and manuals", "Every answer cited, every prediction ranged", "A named person approves every action"],
+      "problem": "87% of manufacturers have run at least one GenAI pilot, and Gartner warns that over 40% of agentic AI projects could be abandoned by 2027. Off-the-shelf copilots answer confidently even when they are wrong, cannot see your plant data, and act without clear approval rules.",
+      "features": ["An assistant grounded in your maintenance system (CMMS), sensor history and manuals", "Every answer cites its source; predictions carry a stated confidence range", "Approval steps: the assistant proposes, a named person approves any action", "Full logs for audit, plus an AI Act transparency notice", "Links to PhysIQ Sentinel risk scores"],
+      "benefits": ["Faster diagnosis for technicians, with the evidence in front of them", "Lower risk of the silent errors that erode trust in AI", "Governance built in, not added later"],
+      "audience": "Maintenance and reliability managers, shift leads and operations directors in process plants.",
+      "ctaLabel": "Register early-partner interest",
+      "sources": [{ "label": "Manufacturing Dive, 2026 (Deloitte and Gartner data)", "url": "https://www.manufacturingdive.com/news/agentic-ai-manufacturing-adoption-data-gaps-evolution/822789/" }]
+    },
+    {
+      "title": "Data Protection and AI Readiness Sprint",
+      "slug": "data-protection-ai-readiness-sprint",
+      "category": "innovation",
+      "order": 11,
+      "tagline": "Be compliant and ready before regulators ask — in English or French.",
+      "whyNow": "Mid-2026 — the transition period of Cameroon's Law No. 2024/017 on personal data protection has ended.",
+      "cardBullets": ["Records of processing and impact assessments", "Cross-border transfer files", "AI-use register and responsible-AI policy"],
+      "problem": "Cameroon's Law No. 2024/017 set an 18-month transition that ended in mid-2026. It requires impact assessments for high-risk processing and prior authorisation for cross-border transfers, with fines of up to XAF 100 million. Across Africa, 44 countries have data protection laws and 38 have regulators in operation. Many institutions and NGOs still have no record of their processing and no plan for AI use.",
+      "features": ["Data mapping and records of processing", "Impact assessments for high-risk processing, including AI systems", "Cross-border transfer files for authorisation requests", "Policies, notices and staff training (through PhysIQ Academy)", "An AI-use register and a responsible-AI policy aligned with the AU Continental AI Strategy", "A fixed-scope sprint with bilingual deliverables"],
+      "benefits": ["Readiness before the regulator's guidance and inspections arrive", "Lower risk of fines and reputational damage", "Stronger standing with funders who require data safeguards"],
+      "audience": "Ministries, public agencies, universities, banks and telecoms, international organisations and NGOs in Cameroon and across Central and West Africa.",
+      "ctaLabel": "Register early-partner interest",
+      "sources": [
+        { "label": "Techhive Advisory, 2025", "url": "https://www.techhiveadvisory.africa/insights/operationalising-cameroons-data-protection-law-a-review-of-key-provisions-and-impacts" },
+        { "label": "Digital Policy Alert, 2026", "url": "https://digitalpolicyalert.org/blog/data-protection-in-africa-roundup" }
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "title": "Why every industrial forecast needs an error bar",
+      "slug": "why-every-industrial-forecast-needs-an-error-bar",
+      "excerpt": "A single predicted number invites false confidence. A calibrated range tells operators when to act and when to check.",
+      "publishedAt": "2026-09-29T08:00:00Z",
+      "body": [
+        "Most industrial AI tools give one number: the predicted moisture, the expected time to failure, the forecast energy use. That number looks precise, but it hides the question that matters on the shop floor: how far can I trust it today?",
+        "A forecast with a stated range answers that question. If the model predicts a bearing failure in 12 to 15 days, the maintenance team can plan. If the range is 2 to 40 days, the right action is to inspect, not to trust the model.",
+        "Conformal prediction is one practical way to produce such ranges. It wraps an existing model and uses held-out data to calibrate its intervals, so that a range labelled 90% contains the true value about 90% of the time — under stated assumptions that we check and document.",
+        "Physics helps too. When a model respects the laws that govern the process — heat and moisture transfer, wear, flow — it stays within physically possible values and needs less data to be useful.",
+        "Our rule is simple: no forecast leaves our hands without its range and the evidence behind it. That is what we mean by decisions you can verify."
+      ]
+    }
+  ]
+}
