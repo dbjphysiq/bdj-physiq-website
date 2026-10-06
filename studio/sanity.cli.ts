@@ -8,4 +8,7 @@ export default defineCliConfig({
   // Your editors will open the Studio at https://<studioHost>.sanity.studio
   // Change this if the name is already taken when you run `npm run deploy`.
   studioHost: "bdjphysiq",
+  deployment: {
+    appId: "e9iy99g0btnbcteg5azjbu6c",
+  },
 });
