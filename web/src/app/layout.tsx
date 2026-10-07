@@ -3,6 +3,7 @@ import { IBM_Plex_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { AssistantWidget } from "@/components/AssistantWidget";
 import { getSiteSettings } from "@/lib/content";
 
 const grotesk = Space_Grotesk({ subsets: ["latin"], weight: ["500", "600", "700"], variable: "--font-grotesk", display: "swap" });
@@ -35,6 +36,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Header />
         <main id="main">{children}</main>
         <Footer settings={settings} />
+        {process.env.ANTHROPIC_API_KEY ? <AssistantWidget /> : null}
       </body>
     </html>
   );

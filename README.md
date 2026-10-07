@@ -308,3 +308,12 @@ The webhook is created in the **Sanity** dashboard. The matching secret lives in
 - Add the RCCM number and tax ID to the footer legal line once registration is complete.
 - Upload a founder photo in the Studio (About page > Founder photo, with alt text).
 - Have a lawyer confirm the service commitments, and check the statistics and dates flagged in the website copy.
+
+## Optional: live database, lead form and AI assistant
+
+These features switch on only when their environment variables exist. Without them the site behaves exactly as before.
+
+1. **Database.** Create a free Postgres database at neon.tech (or supabase.com), open its SQL editor and run `web/db/schema.sql` once. Add `DATABASE_URL` in Vercel. The contact page then shows a form that saves every enquiry to the `leads` table.
+2. **Lead alerts (optional).** Create a free account at resend.com and add `RESEND_API_KEY` and `LEAD_NOTIFY_EMAIL` to get an email for each new lead.
+3. **AI assistant.** Create an API key in the Anthropic console, set a monthly spending limit there, and add `ANTHROPIC_API_KEY` in Vercel. An "Ask us" button appears on every page. It answers only from the site content, tells visitors it is an AI, and passes quote requests to the contact form. Limits: 20 messages per visitor per hour and `ASSISTANT_DAILY_LIMIT` (default 400) per day for the whole site.
+4. Redeploy after adding variables. Read the conversations and leads in the database dashboard.
