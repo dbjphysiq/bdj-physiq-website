@@ -9,7 +9,7 @@ const dataset = process.env.SANITY_STUDIO_DATASET || "production";
 
 export default defineConfig({
   name: "default",
-  title: "BDJ PhysIQ website",
+  title: "DBJ PhysIQ website",
   projectId,
   dataset,
   plugins: [structureTool({ structure }), visionTool()],

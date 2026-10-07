@@ -7,7 +7,7 @@ type Msg = { role: "user" | "assistant"; content: string };
 
 const GREETING: Msg = {
   role: "assistant",
-  content: "Hello. I am the BDJ PhysIQ AI assistant. Ask me about our services, pilots or training. Bonjour, je réponds aussi en français.",
+  content: "Hello. I am the DBJ PhysIQ AI assistant. Ask me about our services, pilots or training. Bonjour, je réponds aussi en français.",
 };
 
 export function AssistantWidget() {
@@ -56,7 +56,7 @@ export function AssistantWidget() {
         <section aria-label="AI assistant" className="mb-3 flex h-[min(32rem,calc(100vh-7rem))] w-[min(22rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-xl">
           <header className="flex items-center justify-between bg-ink px-4 py-3 text-white">
             <div>
-              <p className="text-[15px] font-semibold">Ask BDJ PhysIQ</p>
+              <p className="text-[15px] font-semibold">Ask DBJ PhysIQ</p>
               <p className="text-xs text-[#c9d4e3]">AI assistant. Answers may contain errors.</p>
             </div>
             <button onClick={() => setOpen(false)} aria-label="Close assistant" className="rounded p-1 text-xl leading-none hover:bg-white/10">×</button>

@@ -6,7 +6,7 @@ import { Button } from "@/components/Button";
 import { getAbout } from "@/lib/content";
 import { urlFor } from "@/sanity/image";
 
-export const metadata: Metadata = { title: "About and method", description: "Mission, method and founder of BDJ PhysIQ Technologies." };
+export const metadata: Metadata = { title: "About and method", description: "Mission, method and founder of DBJ PhysIQ Technologies." };
 
 function Columns({ items }: { items?: { title: string; text: string }[] }) {
   return (

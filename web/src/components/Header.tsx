@@ -13,9 +13,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur">
       <Container className="flex h-16 items-center justify-between">
-        <Link href="/" aria-label="BDJ PhysIQ home" className="flex items-center gap-2.5">
+        <Link href="/" aria-label="DBJ PhysIQ home" className="flex items-center gap-2.5">
           <Image src="/brand-mark.svg" alt="" width={36} height={36} priority className="h-8 w-8" />
-          <span className="font-display text-[17px] font-semibold tracking-tight text-ink">BDJ PhysIQ</span>
+          <span className="font-display text-[17px] font-semibold tracking-tight text-ink">DBJ PhysIQ</span>
         </Link>
         <nav aria-label="Main" className="hidden items-center gap-8 text-[15px] md:flex">
           {nav.map((n) => (

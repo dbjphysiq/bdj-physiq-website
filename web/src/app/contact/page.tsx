@@ -3,11 +3,11 @@ import { Container } from "@/components/Container";
 import { ContactForm } from "@/components/ContactForm";
 import { getSiteSettings } from "@/lib/content";
 
-export const metadata: Metadata = { title: "Contact", description: "Book a 30-minute scoping call with BDJ PhysIQ Technologies." };
+export const metadata: Metadata = { title: "Contact", description: "Book a 30-minute scoping call with DBJ PhysIQ Technologies." };
 
 export default async function ContactPage() {
   const s = await getSiteSettings();
-  const subject = encodeURIComponent("Scoping call request: BDJ PhysIQ");
+  const subject = encodeURIComponent("Scoping call request: DBJ PhysIQ");
   const body = encodeURIComponent(
     "Organisation:\nRole:\nThe decision or process you want to improve:\nPreferred language (English/French):\nPreferred times (CET):\n",
   );

@@ -9,7 +9,7 @@ import { getSiteSettings } from "@/lib/content";
 const grotesk = Space_Grotesk({ subsets: ["latin"], weight: ["500", "600", "700"], variable: "--font-grotesk", display: "swap" });
 const plex = IBM_Plex_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-plex", display: "swap" });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://bdjphysiq.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dbjphysiq.com";
 
 export async function generateMetadata(): Promise<Metadata> {
   const s = await getSiteSettings();

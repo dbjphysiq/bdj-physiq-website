@@ -1,4 +1,4 @@
-# BDJ PhysIQ Technologies website
+# DBJ PhysIQ Technologies website
 
 A fast bilingual-ready marketing site built with **Next.js (App Router) + React + Tailwind CSS**, content managed in **Sanity**, code on **GitHub**, hosted on **Vercel**.
 
@@ -7,7 +7,7 @@ A fast bilingual-ready marketing site built with **Next.js (App Router) + React 
   Developer ───────────────────► GitHub ──► Vercel     Editor ─────────────► Sanity Content Lake
                                               │  build + deploy                    │
                                               ▼                                    │ webhook (signed POST)
-                                    https://bdjphysiq.com  ◄── /api/revalidate ◄───┘
+                                    https://dbjphysiq.com  ◄── /api/revalidate ◄───┘
                                     (static pages, cached)     expires cache tags > fresh page on next visit
 ```
 
@@ -47,7 +47,7 @@ Open http://localhost:3000. You should see the full site with the seed content.
 
 ## Step 2: Create the Sanity project and Studio
 
-1. Go to **https://www.sanity.io/manage** > **Create new project**. Name: `BDJ PhysIQ Website`. Choose the **Free** plan. Create a dataset called **`production`** with **Public** visibility (the website only reads published content).
+1. Go to **https://www.sanity.io/manage** > **Create new project**. Name: `DBJ PhysIQ Website`. Choose the **Free** plan. Create a dataset called **`production`** with **Public** visibility (the website only reads published content).
 2. Copy the **Project ID** shown at the top of the project page (8 characters, e.g. `a1b2c3d4`).
 3. In the terminal:
 
@@ -122,11 +122,11 @@ git push -u origin main
 | `NEXT_PUBLIC_SANITY_PROJECT_ID` | your Project ID |
 | `NEXT_PUBLIC_SANITY_DATASET` | `production` |
 | `NEXT_PUBLIC_SANITY_API_VERSION` | `2026-09-01` |
-| `NEXT_PUBLIC_SITE_URL` | `https://bdjphysiq.com` (or the `*.vercel.app` URL until the domain is ready) |
+| `NEXT_PUBLIC_SITE_URL` | `https://dbjphysiq.com` (or the `*.vercel.app` URL until the domain is ready) |
 | `SANITY_REVALIDATE_SECRET` | the same long random string as in `.env.local` |
 
 4. Click **Deploy**. After about a minute you get a live URL such as `https://bdj-physiq-website.vercel.app`.
-5. **Custom domain:** Project > **Settings > Domains** > add `bdjphysiq.com` and follow the DNS instructions from Vercel at your domain registrar.
+5. **Custom domain:** Project > **Settings > Domains** > add `dbjphysiq.com` and follow the DNS instructions from Vercel at your domain registrar.
 
 **The code workflow is now automatic:**
 
@@ -239,7 +239,7 @@ The webhook is created in the **Sanity** dashboard. The matching secret lives in
 | Field | Value |
 |---|---|
 | Name | `Vercel revalidate` |
-| URL | `https://bdjphysiq.com/api/revalidate` (or your `*.vercel.app` URL) |
+| URL | `https://dbjphysiq.com/api/revalidate` (or your `*.vercel.app` URL) |
 | Dataset | `production` |
 | Trigger on | ☑ Create ☑ Update ☑ Delete |
 | Filter | `_type in ["siteSettings", "aboutPage", "service", "post"]` |
@@ -304,7 +304,7 @@ The webhook is created in the **Sanity** dashboard. The matching secret lives in
 
 ## Before launch
 
-- Register **bdjphysiq.com** and switch the contact email to an address on that domain (update it in the Studio).
+- Register **dbjphysiq.com** and switch the contact email to an address on that domain (update it in the Studio).
 - Add the RCCM number and tax ID to the footer legal line once registration is complete.
 - Upload a founder photo in the Studio (About page > Founder photo, with alt text).
 - Have a lawyer confirm the service commitments, and check the statistics and dates flagged in the website copy.

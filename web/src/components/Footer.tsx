@@ -8,9 +8,9 @@ export function Footer({ settings }: { settings: SiteSettings }) {
     <footer className="border-t border-line bg-paper text-slate">
       <Container className="grid gap-12 py-16 md:grid-cols-[2fr_1fr_1.4fr]">
         <div>
-          <Link href="/" aria-label="BDJ PhysIQ home" className="inline-flex items-center gap-2.5">
+          <Link href="/" aria-label="DBJ PhysIQ home" className="inline-flex items-center gap-2.5">
             <Image src="/brand-mark.svg" alt="" width={32} height={32} className="h-8 w-8" />
-            <span className="font-display text-lg font-semibold text-ink">BDJ PhysIQ</span>
+            <span className="font-display text-lg font-semibold text-ink">DBJ PhysIQ</span>
           </Link>
           <p className="mt-4 max-w-xs leading-7">{settings.tagline}.</p>
           <p className="mt-1 font-display text-ink">{settings.motto}</p>

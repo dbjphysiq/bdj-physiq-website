@@ -18,7 +18,7 @@ async function notify(lead: { name: string; email: string; organisation: string;
       method: "POST",
       headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
       body: JSON.stringify({
-        from: process.env.LEAD_FROM_EMAIL ?? "BDJ PhysIQ <onboarding@resend.dev>",
+        from: process.env.LEAD_FROM_EMAIL ?? "DBJ PhysIQ <onboarding@resend.dev>",
         to: [to],
         reply_to: lead.email,
         subject: `New enquiry from ${lead.name}${lead.organisation ? ` (${lead.organisation})` : ""}`,
