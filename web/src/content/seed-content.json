@@ -6,18 +6,16 @@
     "ctaHeading": "Bring us one decision you want to get right.",
     "heroHeadline": "Decisions you can verify, built on physics and clean data.",
     "heroSubheadline": "We model your process from physics and your own measurements, and we tell you how far each result can be trusted. Less waste, less downtime, fewer surprises, and documentation an auditor can follow.",
-    "legalLine": "DBJ PhysIQ Technologies S.A.R.L., RCCM CM-MVR-01-2026-B13-00062, NIU M10261905600T, Maroua, Far North Region, Cameroon.",
+    "legalLine": "DBJ PhysIQ Technologies S.A.R.L., RCCM CM-MVR-01-2026-B13-00062, Cameroon.",
     "location": "Yaoundé and Maroua- Cameroon",
     "motto": "Measure. Model. Deliver.",
     "primaryCta": {
-      "_type": "link",
-      "href": "/contact",
-      "label": "Book a 30-minute scoping call"
+      "label": "See how we calibrate a model",
+      "href": "/calibrated-surrogates"
     },
     "secondaryCta": {
-      "_type": "link",
-      "href": "/about#method",
-      "label": "See how a pilot works"
+      "label": "Talk to us",
+      "href": "/contact"
     },
     "seoDescription": "Physics-informed AI, data engineering and AI governance for manufacturers and public institutions. Fixed-price pilots, documented results, English and French.",
     "siteTitle": "DBJ PhysIQ Technologies",
