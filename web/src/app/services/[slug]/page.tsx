@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
+import { DarkBreadcrumb, PageHero } from "@/components/PageHero";
 import { getService, getServices } from "@/lib/content";
+import { PILOT } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -27,8 +28,9 @@ function List({ title, items }: { title: string; items?: string[] }) {
       <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
       <ul className="mt-6 space-y-4">
         {items.map((i) => (
-          <li key={i} className="grid grid-cols-[14px_1fr] gap-3 text-lg leading-8">
-            <span aria-hidden className="mt-[0.8rem] h-[2px] w-3 bg-signal" />{i}
+          <li key={i} className="grid grid-cols-[22px_1fr] gap-3 text-lg leading-8">
+            <svg aria-hidden viewBox="0 0 20 20" className="mt-1.5 h-5 w-5 text-signal"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            {i}
           </li>
         ))}
       </ul>
@@ -41,27 +43,30 @@ export default async function ServicePage({ params }: Props) {
   const s = await getService(slug);
   if (!s) notFound();
 
+  const badge =
+    s.category === "innovation" ? "New service" : s.category === "accelerator" ? "In development" : "Core service";
+
   return (
     <>
-      <section className="bg-white">
-        <Container className="pb-16 pt-12 sm:pt-16">
-          <nav aria-label="Breadcrumb" className="text-[15px] text-muted">
-            <Link href="/services" className="hover:text-ink">Services</Link>
-            <span aria-hidden className="mx-2">/</span>
-            <span className="text-ink">{s.title}</span>
-          </nav>
-          <div className="mt-10 flex flex-wrap items-center gap-3">
-            {s.category === "innovation" && <span className="rounded-full bg-amber/15 px-3 py-1 text-sm font-medium text-[#7a5300]">New service</span>}
-            {s.category === "accelerator" && <span className="rounded-full bg-paper px-3 py-1 text-sm font-medium text-muted">In development</span>}
+      <PageHero
+        breadcrumb={<DarkBreadcrumb items={[{ label: "Services", href: "/services" }, { label: s.title }]} />}
+        eyebrow={badge}
+        title={s.title}
+        intro={s.tagline}
+      >
+        {(s.whyNow || s.statusNote) && (
+          <div className="max-w-2xl space-y-4">
+            {s.whyNow && (
+              <p className="border-l-2 border-amber pl-4 leading-7 text-white/90">
+                <span className="font-medium text-amber">Why now. </span>{s.whyNow}
+              </p>
+            )}
+            {s.statusNote && <p className="leading-7 text-mist/80">{s.statusNote}</p>}
           </div>
-          <h1 className="mt-4 max-w-3xl text-[2.6rem] font-semibold leading-[1.08] tracking-tight sm:text-6xl">{s.title}</h1>
-          <p className="mt-6 max-w-2xl text-xl leading-9">{s.tagline}</p>
-          {s.whyNow && <p className="mt-6 max-w-2xl border-l-2 border-amber pl-4 leading-7 text-ink"><span className="font-medium">Why now. </span>{s.whyNow}</p>}
-          {s.statusNote && <p className="mt-6 max-w-2xl leading-7 text-muted">{s.statusNote}</p>}
-        </Container>
-      </section>
+        )}
+      </PageHero>
 
-      <Container className="grid gap-16 pb-24 lg:grid-cols-[1fr_320px]">
+      <Container className="grid gap-16 py-16 sm:py-20 lg:grid-cols-[1fr_340px]">
         <div className="space-y-14">
           <section className="border-t border-line pt-8">
             <h2 className="text-2xl font-semibold tracking-tight">The problem we solve</h2>
@@ -70,22 +75,25 @@ export default async function ServicePage({ params }: Props) {
           <List title="Features and deliverables" items={s.features} />
           <List title="Benefits and business impact" items={s.benefits} />
         </div>
-        <aside className="space-y-8 lg:sticky lg:top-24 lg:self-start">
+        <aside className="space-y-8 lg:sticky lg:top-28 lg:self-start">
           {s.audience && (
-            <div className="border-t border-line pt-8">
-              <h2 className="text-lg font-semibold">Who it is for</h2>
-              <p className="mt-3 leading-7">{s.audience}</p>
+            <div className="rounded-2xl border border-line p-7">
+              <h2 className="font-mono text-[12px] font-medium uppercase tracking-[0.14em] text-muted">Who it is for</h2>
+              <p className="mt-3 leading-7 text-ink">{s.audience}</p>
             </div>
           )}
-          <div className="rounded-2xl bg-ink p-7 text-white">
-            <p className="font-display text-lg font-semibold">Start with one decision</p>
-            <p className="mt-2 leading-7 text-[#c9d4e3]">A 30-minute call, with no obligation.</p>
-            <div className="mt-6"><Button href="/contact" variant="inverse">{s.ctaLabel ?? "Book a scoping call"}</Button></div>
+          <div className="on-dark relative overflow-hidden rounded-2xl bg-night p-7 text-mist">
+            <div aria-hidden className="absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgb(42_120_214/0.35),transparent_60%)]" />
+            <div className="relative">
+              <p className="font-display text-lg font-semibold text-white">Start with one decision</p>
+              <p className="mt-2 leading-7">A 30-minute call, with no obligation. Pilots run {PILOT.weeks} at a fixed price.</p>
+              <div className="mt-6"><Button href="/contact" variant="accent" arrow>{s.ctaLabel ?? "Book a scoping call"}</Button></div>
+            </div>
           </div>
           {s.sources && s.sources.length > 0 && (
             <div className="text-sm text-muted">
-              <p className="font-medium text-ink">Sources</p>
-              <ul className="mt-2 space-y-1.5">
+              <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-ink">Sources</p>
+              <ul className="mt-3 space-y-1.5">
                 {s.sources.map((src) => (
                   <li key={src.url}><a href={src.url} target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-ink">{src.label}</a></li>
                 ))}

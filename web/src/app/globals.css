@@ -1,26 +1,108 @@
 @import "tailwindcss";
 
 @theme {
+  /* Surfaces: light body, deep navy for hero, research band and closing sections */
+  --color-night: #050d1a;
+  --color-night-2: #081528;
   --color-ink: #0b2545;
   --color-ink-2: #13315c;
-  --color-signal: #2a78d6;
-  --color-signal-dark: #1c5cab;
+
+  /* Brand accents */
+  /* Brand blue, darkened from #2a78d6 so small text passes WCAG AA:
+     5.5:1 on white and 5.1:1 on paper (the logo keeps #2a78d6). */
+  --color-signal: #2368c0;
+  --color-signal-dark: #1a529c;
+  --color-sky: #8bb9f2;
   --color-amber: #eda100;
+  --color-amber-soft: #f6bf3f;
+
+  /* Neutrals */
   --color-paper: #f6f7f9;
   --color-line: #e3e6ea;
   --color-slate: #3a4556;
   --color-muted: #5b6577;
+  --color-mist: #c9d4e3;
+
   --font-sans: var(--font-plex), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plexmono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --animate-rise: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-fade: fade 1.2s ease-out both;
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 }
 
 @layer base {
   html { scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   body { @apply bg-white text-slate antialiased; font-feature-settings: "kern", "liga"; }
   h1, h2, h3 { @apply font-display text-ink; text-wrap: balance; }
   p { text-wrap: pretty; }
   ::selection { background: var(--color-signal); color: white; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Deep navy hero backdrop with a soft light source upper right */
+  .bg-hero-glow {
+    background:
+      radial-gradient(ellipse 70% 60% at 78% 28%, rgb(42 120 214 / 0.22) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 45% at 92% 85%, rgb(237 161 0 / 0.08) 0%, transparent 60%),
+      linear-gradient(180deg, #071226 0%, var(--color-night) 100%);
+  }
+
+  /* Faint engineering grid for light sections */
+  .bg-grid-fine {
+    background-image:
+      linear-gradient(to right, rgb(11 37 69 / 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(11 37 69 / 0.045) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* The same grid, for dark sections */
+  .bg-grid-night {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* Keep the wave field away from the text column */
+  .mask-field-right {
+    mask-image: linear-gradient(to right, transparent 0%, rgb(0 0 0 / 0.35) 28%, black 55%);
+  }
+  /* Homepage hero: centred on the forecast card, fading before the text and the bottom edge */
+  .mask-field-hero {
+    mask-image: radial-gradient(ellipse 52% 72% at 74% 38%, black 25%, rgb(0 0 0 / 0.4) 55%, transparent 82%);
+  }
+  @media (max-width: 1023px) {
+    .mask-field-hero {
+      mask-image: radial-gradient(ellipse 90% 45% at 70% 72%, black 15%, rgb(0 0 0 / 0.35) 55%, transparent 85%);
+    }
+  }
+  .mask-field-soft {
+    mask-image: radial-gradient(ellipse 75% 85% at 70% 50%, black 30%, transparent 78%);
+  }
+  @media (max-width: 1023px) {
+    .mask-field-right {
+      mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0.45) 0%, rgb(0 0 0 / 0.18) 60%, transparent 100%);
+    }
+  }
 }
 
 /* Readable long-form text for articles */
@@ -31,3 +113,4 @@
 .prose-physiq a { @apply text-signal underline underline-offset-4; }
 
 :focus-visible { outline: 2px solid var(--color-signal); outline-offset: 3px; border-radius: 4px; }
+.on-dark :focus-visible { outline-color: var(--color-amber); }

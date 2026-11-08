@@ -1,12 +1,14 @@
-import { Container } from "@/components/Container";
 import { Button } from "@/components/Button";
+import { PageHero } from "@/components/PageHero";
 
 export default function NotFound() {
   return (
-    <Container className="py-24 text-center">
-      <p className="font-display text-lg font-semibold text-signal">404</p>
-      <h1 className="mt-2 text-3xl font-semibold">This page is outside our model&apos;s range.</h1>
-      <div className="mt-8"><Button href="/">Back to the homepage</Button></div>
-    </Container>
+    <PageHero eyebrow="404" title="This page is outside our model's range."
+      intro="The address may have changed, or the page may never have existed.">
+      <div className="flex flex-wrap gap-3">
+        <Button href="/" variant="accent" arrow>Back to the homepage</Button>
+        <Button href="/services" variant="ghost">See our services</Button>
+      </div>
+    </PageHero>
   );
 }
