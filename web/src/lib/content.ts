@@ -54,6 +54,7 @@ export type Service = {
   order: number;
   tagline: string;
   summary?: string;
+  lastReviewed?: string;
   whyNow?: string;
   statusNote?: string;
   cardBullets?: string[];

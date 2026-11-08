@@ -4,7 +4,7 @@ import { Container } from "@/components/Container";
 import { DarkBreadcrumb, PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
 import { getService } from "@/lib/content";
-import { FLAGSHIP, PAPER } from "@/lib/site";
+import { CONTACT_CTA, FLAGSHIP, PAPER } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Calibrated surrogate models",
@@ -27,7 +27,7 @@ const PHASES = [
     name: "Phase two",
     title: "Into the design loop",
     duration: "Four to eight weeks",
-    text: "Surrogate retraining where it helps, Bayesian optimisation over the design space with tolerance constraints, and the intervals wired into the workflow your engineers already use. Code, environment specification and documentation handed over.",
+    text: "Surrogate retraining where it helps, Bayesian optimization over the design space with tolerance constraints, and the intervals wired into the workflow your engineers already use. Code, environment specification and documentation handed over.",
   },
 ];
 
@@ -52,7 +52,7 @@ export default async function CalibratedSurrogatesPage() {
       >
         {/* The paper link sits in the header so it is above the fold on phones. */}
         <div className="flex flex-wrap items-center gap-3">
-          <Button href="/contact" variant="accent" arrow>Talk to us</Button>
+          <Button href="/contact" variant="accent" arrow>{CONTACT_CTA}</Button>
           <PaperLink />
         </div>
         <p className="mt-5 font-mono text-[12px] text-mist/60">{PAPER.citation} · DOI {PAPER.doi}</p>
@@ -64,8 +64,8 @@ export default async function CalibratedSurrogatesPage() {
             <h3 className="text-2xl font-semibold tracking-tight text-ink">What we do</h3>
             <p>
               We wrap your surrogate in split conformal prediction. The result is a prediction interval with a
-              distribution-free coverage guarantee: at 90 per cent confidence, the true value falls inside the
-              interval at least 90 per cent of the time on average. The guarantee assumes nothing about the model
+              distribution-free coverage guarantee: at 90 percent confidence, the true value falls inside the
+              interval at least 90 percent of the time on average. The guarantee assumes nothing about the model
               being correct, and nothing about the errors being Gaussian.
             </p>
             <p>
@@ -122,7 +122,7 @@ export default async function CalibratedSurrogatesPage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <PaperLink />
-              <Button href="/contact" variant="accent" arrow>Talk to us</Button>
+              <Button href="/contact" variant="accent" arrow>{CONTACT_CTA}</Button>
             </div>
           </div>
           <figure className="m-0 rounded-2xl border border-white/10 bg-night-2/90 p-7 sm:p-8">

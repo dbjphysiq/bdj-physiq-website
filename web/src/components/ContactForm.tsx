@@ -28,7 +28,7 @@ export function ContactForm({ fallbackEmail }: { fallbackEmail: string }) {
     return (
       <div role="status" className="rounded-xl border border-line bg-paper p-6">
         <h2 className="text-xl font-semibold">Thank you. We have your message.</h2>
-        <p className="mt-2 leading-7">We reply within two working days, in English or French.</p>
+        <p className="mt-2 leading-7">We will follow up to arrange a suitable time, in English or French.</p>
       </div>
     );
   }
@@ -44,7 +44,7 @@ export function ContactForm({ fallbackEmail }: { fallbackEmail: string }) {
         </label>
       </div>
       <div className="grid gap-5 sm:grid-cols-2">
-        <label className="block text-[15px] font-medium text-ink">Organisation
+        <label className="block text-[15px] font-medium text-ink">Organization
           <input name="organisation" maxLength={160} autoComplete="organization" className={field} />
         </label>
         <label className="block text-[15px] font-medium text-ink">Preferred language

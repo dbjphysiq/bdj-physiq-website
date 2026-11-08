@@ -2,22 +2,24 @@
   "siteSettings": {
     "contactEmail": "daliwa@dbjphysiq.com",
     "contactPhone": "+237 696 727 235",
-    "ctaBody": "In a 30-minute call we will tell you whether your data can support it, what a pilot would cost and how we would measure success. There is no obligation.",
+    "ctaBody": "In an introductory call, we will discuss your objectives, assess the initial fit, and outline the information needed to scope the work. There is no obligation.",
     "ctaHeading": "Bring us one decision you want to get right.",
-    "heroHeadline": "Decisions you can verify, built on physics and clean data.",
-    "heroSubheadline": "We model your process from physics and your own measurements, and we tell you how far each result can be trusted. Less waste, less downtime, fewer surprises, and documentation an auditor can follow.",
+    "heroHeadline": "Physics-informed AI. Practical decisions.",
+    "heroSubheadline": "We help manufacturers and public institutions turn complex data into informed decisions. Our work combines physical models, data engineering, and AI—with documented assumptions, validation results, and clear explanations of uncertainty.",
     "legalLine": "DBJ PhysIQ Technologies S.A.R.L., RCCM CM-MVR-01-2026-B13-00062, Cameroon.",
-    "location": "Yaoundé and Maroua- Cameroon",
+    "location": "Yaoundé and Maroua, Cameroon",
     "motto": "Measure. Model. Deliver.",
     "primaryCta": {
-      "label": "See how we calibrate a model",
-      "href": "/calibrated-surrogates"
+      "_type": "link",
+      "href": "/contact",
+      "label": "Discuss your project"
     },
     "secondaryCta": {
-      "label": "Talk to us",
-      "href": "/contact"
+      "_type": "link",
+      "href": "/services",
+      "label": "Explore our expertise"
     },
-    "seoDescription": "Physics-informed AI, data engineering and AI governance for manufacturers and public institutions. Fixed-price pilots, documented results, English and French.",
+    "seoDescription": "Physics-informed AI, data engineering, and AI governance for manufacturers and public institutions. Clearly scoped pilots, in English and French.",
     "siteTitle": "DBJ PhysIQ Technologies",
     "stats": [
       {
@@ -33,13 +35,13 @@
         "value": "US$1.4tn"
       },
       {
-        "caption": "High-risk obligations under the EU AI Act apply from this date, and from 2 August 2028 for AI built into regulated products such as machinery.",
-        "sourceLabel": "Gibson Dunn, 2026",
-        "sourceUrl": "https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/",
-        "value": "2 Dec 2027"
+        "caption": "High-risk obligations under the EU AI Act apply from this date for stand-alone systems, and from August 2, 2028 for AI built into regulated products such as machinery.",
+        "sourceLabel": "EUR-Lex, Regulation (EU) 2026/1744",
+        "sourceUrl": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
+        "value": "Dec 2, 2027"
       },
       {
-        "caption": "of organisations surveyed have a mature governance model for autonomous AI agents, yet 74% plan to deploy agentic AI within two years.",
+        "caption": "of organizations surveyed have a mature governance model for autonomous AI agents, yet 74% plan to deploy agentic AI within two years.",
         "sourceLabel": "Deloitte, 2026",
         "sourceUrl": "https://www.deloitte.com/global/en/issues/generative-ai/state-of-ai-in-enterprise.html",
         "value": "21%"
@@ -47,24 +49,24 @@
     ],
     "tagline": "Physics-informed AI for industry and institutions",
     "trustLine": [
-      "Peer-reviewed methods (JASA, 2026)",
-      "Fixed-price pilots",
-      "Your data stays in your systems",
-      "English and French"
+      "Research-backed methods",
+      "Clearly scoped pilots",
+      "Deployment aligned with your security requirements",
+      "Delivery in English and French"
     ],
-    "valueBody": "Scarce measurements. Processes that cannot be run a thousand times to see what happens. Regions where the ground data runs out exactly where the need is greatest. These are the conditions most analytics work quietly assumes away, and they are the conditions we build for.",
-    "valueHeading": "We work where the data is thin and the decision is expensive.",
+    "valueBody": "Some processes are expensive to test. Others have limited historical data or operate under changing conditions. We combine physical knowledge with available measurements to develop useful models, evaluate their limitations, and support decisions within a documented operating range.",
+    "valueHeading": "Built for complex systems and limited data.",
     "valuePillars": [
       {
-        "text": "We audit your data, fix its foundations and agree the few numbers that matter.",
+        "text": "Review your data, identify quality gaps, and agree on the outcomes that matter.",
         "title": "Measure"
       },
       {
-        "text": "We build forecasts that respect the physics of your process, such as heat, moisture, wear and flow, and we state how certain each one is.",
+        "text": "Develop and validate models using relevant physical knowledge and measured data.",
         "title": "Model"
       },
       {
-        "text": "We put the work into your systems and train your people. Everything is documented, so your team can run it without us.",
+        "text": "Integrate the solution into your workflow and equip your team with documentation and training.",
         "title": "Deliver"
       }
     ]
@@ -72,27 +74,27 @@
   "aboutPage": {
     "approach": [
       {
-        "text": "We start from the laws that govern your process: heat, mass, moisture, wear. Models built this way need less data and stay within physically possible values.",
-        "title": "Physics first"
+        "text": "Where relevant, we incorporate physical relationships and constraints into model development and validation.",
+        "title": "Grounded in physical knowledge"
       },
       {
-        "text": "Every forecast comes with a range and a plain account of its limits. We use the same methods as our founder's peer-reviewed work (JASA, 2026).",
-        "title": "Stated uncertainty"
+        "text": "We explain model assumptions, assess uncertainty, and document where results should be used with caution.",
+        "title": "Clear about uncertainty"
       },
       {
-        "text": "We test and reconcile data before we trust it.",
-        "title": "Data foundations before models"
+        "text": "We assess data quality, reconcile sources, and establish checks before developing models or reporting tools.",
+        "title": "Reliable data foundations"
       },
       {
-        "text": "Every model has a named owner, and every automated action has an approval step.",
-        "title": "Humans in charge"
+        "text": "We agree on decision ownership, review procedures, and approval requirements appropriate to the application.",
+        "title": "Defined human oversight"
       },
       {
-        "text": "You receive the code, the assumptions, the validation results and a run-book.",
-        "title": "Documented by default"
+        "text": "We provide the agreed code, assumptions, validation evidence, and operating instructions.",
+        "title": "Documented delivery"
       }
     ],
-    "founderBio": "Dr Daliwa Joseph Bainamndi founded DBJ PhysIQ Technologies. He holds a PhD in Physics and an MSc in Artificial Intelligence and Data Science with Distinction, earned as a Chevening Scholar, and is an Associate Researcher at the Laboratoire Ondes et Milieux Complexes, a CNRS joint research unit in France. His work on physics-informed machine learning with calibrated uncertainty is published in the Journal of the Acoustical Society of America, with a complete reproduction script. He was a Fulbright Scholar Researcher at the University of Missouri, is a member of the consultant team drafting the Republic of Chad's National Artificial Intelligence Strategy 2026–2030, and leads the Central Africa chapter of the Africa AI Governance Index.",
+    "founderBio": "Dr. Daliwa Joseph Bainamndi founded DBJ PhysIQ Technologies. He holds a PhD in Physics and an MSc in Artificial Intelligence and Data Science with Distinction, earned as a Chevening Scholar, and is an Associate Researcher at the Laboratoire Ondes et Milieux Complexes, a CNRS joint research unit in France. His work on physics-informed machine learning with calibrated uncertainty is published in the Journal of the Acoustical Society of America, with a complete reproduction script. He was a Fulbright Scholar Researcher at the University of Missouri, is a member of the consultant team drafting the Republic of Chad's National Artificial Intelligence Strategy 2026–2030, and leads the Central Africa chapter of the Africa AI Governance Index.",
     "founderCredentials": [
       "PhD in Physics with Distinction, University of Ngaoundéré-Cameroon",
       "MSc in AI and Data Science, with Distinction, University of Hull (Chevening Scholar)",
@@ -103,11 +105,11 @@
     ],
     "founderName": "Dr. Daliwa Joseph Bainamndi",
     "founderRole": "Founder and Managing Director",
-    "heading": "Physics-Informed AI & Data Engineering. Scientific Rigor for Global Industry.",
-    "intro": "DBJ PhysIQ Technologies is a physics-informed AI company working with manufacturers and public institutions, registered in Cameroon and delivering internationally in French and English.",
+    "heading": "Scientific expertise for practical challenges.",
+    "intro": "DBJ PhysIQ Technologies is a Cameroon-based AI and data engineering consultancy serving manufacturers and public institutions. We combine scientific modeling, reliable data systems, and practical governance to help clients evaluate options and make informed decisions.",
     "method": [
       {
-        "text": "Review sources, business logic, users and acceptance criteria with your team.",
+        "text": "Review sources, business logic, users, and acceptance criteria with your team.",
         "title": "Discover"
       },
       {
@@ -119,15 +121,15 @@
         "title": "Test"
       },
       {
-        "text": "Deliver code, documentation, test evidence and operating instructions, with a walkthrough.",
+        "text": "Deliver code, documentation, test evidence, and operating instructions, with a walkthrough.",
         "title": "Hand over"
       }
     ],
-    "mission": "We are a consultancy that builds the data pipelines, physics-informed models and monitoring industrial companies and institutions need to act on their data with confidence, reducing waste, downtime and risk, wherever they operate.",
+    "mission": "Help organizations use data and scientific models to improve operations, evaluate choices, and manage uncertainty.",
     "outlook": [
       {
-        "text": "Fixed-scope programmes for the 2026 to 2028 deadlines: data protection and AI readiness, EU AI Act evidence, and packaging compliance data.",
-        "title": "Compliance programmes"
+        "text": "Fixed-scope engagements for data protection and AI readiness, EU AI Act evidence, and packaging compliance data.",
+        "title": "Regulatory readiness"
       },
       {
         "text": "We are growing PhysIQ Academy into a pipeline of African AI engineers who work to international standards.",
@@ -142,7 +144,7 @@
     "values": [
       {
         "text": "We test claims before we make them.",
-        "title": "Scientific rigour"
+        "title": "Scientific rigor"
       },
       {
         "text": "We say what we know, what we don't, and what we will not claim.",
@@ -161,7 +163,7 @@
         "title": "Local talent, global standards"
       }
     ],
-    "vision": "Trustworthy, science-grade AI for every factory and public institution, built on physics, sound data engineering and rigorous evaluation."
+    "vision": "A future in which organizations can understand, evaluate, and responsibly use the AI systems that support their decisions."
   },
   "services": [
     {
@@ -169,35 +171,33 @@
       "cardBullets": [
         "Surrogates trained on your simulation or test data",
         "Intervals with distribution-free coverage guarantees",
-        "Bayesian optimisation and inverse design"
+        "Bayesian optimization and inverse design"
       ],
-      "ctaLabel": "Discuss a calibration study",
       "family": "engineering",
       "features": [
         "Gaussian-process and neural surrogates trained on your simulation or experimental data",
         "Prediction intervals with distribution-free coverage guarantees, using split conformal prediction",
-        "Bayesian optimisation over the design space, including manufacturing tolerance constraints",
+        "Bayesian optimization over the design space, including manufacturing tolerance constraints",
         "Inverse design: specify the performance you need, get the geometry or composition back"
       ],
       "order": 1,
       "problem": "Your team trained a surrogate on simulation output. It runs in milliseconds instead of hours, but it still has not replaced the solver in your design loop, because it returns a single number with no defensible bound on how wrong that number might be. We put calibrated error bounds on the fast models your team already uses, so simulation-driven decisions stop waiting for the solver.",
       "slug": "calibrated-surrogate-models",
-      "tagline": "Surrogate models with error bounds you can defend in a design review.",
+      "tagline": "Accelerate simulation workflows with surrogate models, evaluated prediction intervals, and documented operating limits.",
       "title": "Calibrated surrogate models"
     },
     {
-      "audience": "Plant managers, process and reliability engineers, and operations directors in paper, packaging, corrugated board, building materials and food processing. Also large industrial firms in Central and West Africa.",
+      "audience": "Plant managers, process and reliability engineers, and operations directors in paper, packaging, corrugated board, building materials, and food processing. Also large industrial firms in Central and West Africa.",
       "benefits": [
-        "Physics constraints mean the model needs less data and stays within physically possible values",
+        "Physical constraints can reduce the data a model needs and keep predictions within physically possible values",
         "Operators see how confident each forecast is, so they know when to act and when to check",
-        "Less unplanned downtime, scrap and energy per tonne, with targets agreed with you and measured against your own baseline"
+        "Targets for downtime, scrap, and energy use agreed with you and measured against your own baseline"
       ],
       "cardBullets": [
         "Coupled multiphysics finite element models",
         "Validation against your measured data",
         "A documented validity domain"
       ],
-      "ctaLabel": "Discuss a process-modelling pilot",
       "family": "engineering",
       "features": [
         "Coupled multiphysics finite element models of a physical or production process",
@@ -206,7 +206,7 @@
         "A documented validity domain: where the model holds, and how it fails outside it"
       ],
       "order": 2,
-      "problem": "Your line produces different results on different days with the same inputs, and nobody can say why. Purely data-driven models break when conditions change, and they give one number with no sense of risk. Unplanned downtime costs the world's 500 largest companies US$1.4 trillion a year, and the average facility loses 27 hours a month (Siemens, 2024).",
+      "problem": "Your line produces different results on different days with the same inputs, and nobody can say why. Models built on data alone can drift when conditions change, and a single predicted number gives no sense of risk. Unplanned downtime costs the world's 500 largest companies US$1.4 trillion a year, and the average facility loses 27 hours a month (Siemens, 2024).",
       "slug": "industrial-ai-process-modelling",
       "sources": [
         {
@@ -214,20 +214,19 @@
           "url": "https://assets.new.siemens.com/siemens/assets/api/uuid:1b43afb5-2d07-47f7-9eb7-893fe7d0bc59/TCOD-2024_original.pdf"
         }
       ],
-      "tagline": "We model your process from physics and your own measurements, and we tell you where the model stops being valid.",
-      "title": "Process modelling and simulation"
+      "tagline": "Understand process behavior through physical modeling, measured data, and validation against agreed criteria.",
+      "title": "Process modeling and simulation"
     },
     {
-      "audience": "R&D, materials and test engineering teams planning characterisation or validation campaigns.",
+      "audience": "R&D, materials, and test engineering teams planning characterization or validation campaigns.",
       "cardBullets": [
-        "Bayesian inverse characterisation",
+        "Bayesian inverse characterization",
         "Identifiability analysis",
         "Next-campaign design, ranked by information per test"
       ],
-      "ctaLabel": "Discuss your next test campaign",
       "family": "engineering",
       "features": [
-        "Bayesian inverse characterisation of material or process parameters from existing test data",
+        "Bayesian inverse characterization of material or process parameters from existing test data",
         "Identifiability analysis: which parameters your current measurements can and cannot determine",
         "Next-campaign design, ranked by information gained per test",
         "Protocol documentation, so your own staff can reproduce the results"
@@ -235,14 +234,14 @@
       "order": 3,
       "problem": "Test campaigns are expensive, and many measure quantities that cannot pin down the parameters that matter. We use the data you already have to show which parameters your measurements can determine, and which next tests would resolve the question.",
       "slug": "measurement-experiment-design",
-      "tagline": "Before you spend the testing budget, we tell you which measurements will resolve the question.",
+      "tagline": "Prioritize the measurements most useful for resolving your engineering question.",
       "title": "Measurement and experiment design"
     },
     {
-      "audience": "CIOs, heads of data and BI leads at organisations moving off a legacy ERP or building a cloud data platform. Also institutions consolidating fragmented databases.",
+      "audience": "CIOs, heads of data, and BI leads at organizations moving off a legacy ERP or building a cloud data platform. Also institutions consolidating fragmented databases.",
       "benefits": [
-        "One governed data layer that feeds analytics and AI, whatever happens to your ERP",
-        "Reconciliation tests prove the migrated numbers match the source",
+        "One governed data layer for analytics and AI, independent of changes to your ERP",
+        "Reconciliation tests show whether migrated figures match the source",
         "Extra data engineering capacity without a 7.7-month hiring cycle (Bitkom, 2025)"
       ],
       "cardBullets": [
@@ -250,7 +249,6 @@
         "Legacy and ERP data migration, reconciled against the source",
         "Provenance tracking for every figure"
       ],
-      "ctaLabel": "Discuss your migration",
       "family": "data",
       "features": [
         "ETL and data pipeline design and build",
@@ -259,7 +257,7 @@
         "Provenance tracking: every figure in the output traceable to the record behind it"
       ],
       "order": 4,
-      "problem": "AI and reporting depend on data that is often scattered, unreconciled and locked in legacy systems. 63% of organisations lack, or are unsure they have, data practices ready for AI (Gartner, 2025).",
+      "problem": "AI and reporting depend on data that is often scattered, unreconciled, and locked in legacy systems. 63% of organizations lack, or are unsure they have, data practices ready for AI (Gartner, 2025).",
       "slug": "data-engineering-migration",
       "sources": [
         {
@@ -271,11 +269,11 @@
           "url": "https://www.bitkom.org/Presse/Presseinformation/Deutschland-fehlen-IT-Fachkraefte"
         }
       ],
-      "tagline": "We move your data without losing track of where any of it came from.",
+      "tagline": "Build and migrate data workflows with validation, reconciliation, and traceability.",
       "title": "Data engineering and migration"
     },
     {
-      "audience": "Operations and finance leaders, plant controllers, and programme managers in public institutions and NGOs who need reliable reporting.",
+      "audience": "Operations and finance leaders, plant controllers, and program managers in public institutions and NGOs who need reliable reporting.",
       "benefits": [
         "One version of each number, traceable to its source",
         "Faster, calmer performance reviews",
@@ -286,7 +284,6 @@
         "Forecasting on operational data",
         "Model drift monitoring"
       ],
-      "ctaLabel": "Discuss your dashboards",
       "family": "data",
       "features": [
         "KPI dashboards and operational reporting in Power BI, Tableau or a custom web application",
@@ -298,17 +295,16 @@
       "problem": "Different teams report different numbers for the same KPI. Dashboards multiply, trust falls, and meetings turn into arguments about data instead of decisions.",
       "slug": "analytics-reporting",
       "sources": [],
-      "tagline": "Reports where every number shows its source, built so your team can maintain them.",
-      "title": "Analytics, reporting and dashboards"
+      "tagline": "Turn operational data into clear reports and decision tools, supported by documented sources and quality checks.",
+      "title": "Analytics, reporting, and dashboards"
     },
     {
-      "audience": "Agribusiness, insurers, ministries of agriculture, development funders and humanitarian programmes.",
+      "audience": "Agribusiness, insurers, ministries of agriculture, development funders, and humanitarian programs.",
       "cardBullets": [
         "Shock detection from earth observation data",
         "Yield and stress forecasting at district scale",
         "Attribution: why each alert fired"
       ],
-      "ctaLabel": "Discuss an early-warning pilot",
       "family": "data",
       "features": [
         "Risk and shock-detection models from earth observation and reanalysis data",
@@ -319,13 +315,13 @@
       "order": 6,
       "problem": "Early warning matters most where ground data is scarcest. We build risk and shock-detection models from earth observation and reanalysis data, show why each alert fires, and state plainly where the model is weakest.",
       "slug": "climate-agricultural-risk-analytics",
-      "tagline": "Early warning built from satellite and open climate data, for places with little ground data.",
+      "tagline": "Use satellite, climate, and available local data to assess risks, monitor conditions, and support planning.",
       "title": "Climate and agricultural risk analytics"
     },
     {
-      "audience": "Ministries and regulators, public agencies, international organisations, funders, NGOs, and companies deploying AI in regulated settings.",
+      "audience": "Ministries and regulators, public agencies, international organizations, funders, NGOs, and companies deploying AI in regulated settings.",
       "benefits": [
-        "Strategies that name owners, budgets and milestones, not just ambitions",
+        "Strategies that name owners, budgets, and milestones, not just ambitions",
         "Fewer compliance surprises, with documentation ready for regulators or auditors",
         "Evidence that funders and boards can rely on"
       ],
@@ -334,16 +330,15 @@
         "Regulatory analysis: EU AI Act, NIST AI RMF, African Union",
         "AI policy and strategy drafting"
       ],
-      "ctaLabel": "Discuss your governance needs",
       "family": "governance",
       "features": [
-        "AI and data protection readiness assessment, with a prioritised remediation plan",
+        "AI and data protection readiness assessment, with a prioritized remediation plan",
         "Comparative regulatory analysis against the EU AI Act, the NIST AI Risk Management Framework, and African Union and regional instruments",
         "AI policy and institutional or national strategy drafting, with each initiative given one owner, one budget line and one indicator",
         "Governance indicator design and scoring for indices, regulators and funders"
       ],
       "order": 7,
-      "problem": "Rules are arriving faster than organisations can absorb them. In Africa, fewer than 15 countries have a national AI strategy, and the hard part is putting strategies into practice (OECD, 2026). In Europe, the AI Act's obligations phase in from 2025 to 2028. Donors and NGOs need evidence that holds up.",
+      "problem": "Rules are arriving faster than organizations can absorb them. In Africa, fewer than 15 countries have a national AI strategy, and the hard part is putting strategies into practice (OECD, 2026). In Europe, the AI Act's obligations phase in from 2025 to 2028. Donors and NGOs need evidence that holds up.",
       "slug": "ai-governance-advisory",
       "sources": [
         {
@@ -351,29 +346,28 @@
           "url": "https://www.oecd.org/en/publications/oecd-artificial-intelligence-case-studies_c517fcf5-en/ai-governance-in-africa_1ff55135-en.html"
         }
       ],
-      "tagline": "We tell you what your AI obligations are, where you currently fail them, and what to fix first.",
-      "title": "AI governance, compliance and readiness"
+      "tagline": "Assess governance practices, identify gaps against relevant requirements and frameworks, and prioritize improvements.",
+      "title": "AI governance, compliance, and readiness"
     },
     {
-      "audience": "Ministries, regulators, universities, funds, donor-funded programmes and NGOs.",
+      "audience": "Ministries, regulators, universities, funds, donor-funded programs, and NGOs.",
       "cardBullets": [
         "Multi-axis institutional audits",
         "Logframes, indicators and theories of change",
         "Evaluation design and donor reporting"
       ],
-      "ctaLabel": "Discuss an assessment",
       "family": "governance",
       "features": [
-        "Multi-axis institutional audit (organisational, financial, infrastructure, academic and strategic), delivered as diagnostic matrices, sectoral reports and a restructuring plan",
-        "Logframes, indicator frameworks and theories of change for donor-funded programmes",
+        "Multi-axis institutional audit (organizational, financial, infrastructure, academic, and strategic), delivered as diagnostic matrices, sectoral reports, and a restructuring plan",
+        "Logframes, indicator frameworks, and theories of change for donor-funded programs",
         "Evaluation design, baseline and endline measurement, and donor reporting",
         "Data systems that make the reporting repeatable rather than reconstructed each cycle"
       ],
       "order": 8,
-      "problem": "Programmes and institutions are asked to prove results they cannot measure consistently, so reporting is rebuilt from scratch each cycle. We assess what is working, design the indicators, and build the data systems that make reporting repeatable.",
+      "problem": "Programs and institutions are asked to prove results they cannot measure consistently, so reporting is rebuilt from scratch each cycle. We assess what is working, design the indicators, and build the data systems that make reporting repeatable.",
       "slug": "institutional-diagnostics-evaluation",
-      "tagline": "Independent assessment of whether a programme or institution is doing what it claims, and how you would know.",
-      "title": "Institutional diagnostics, monitoring and evaluation"
+      "tagline": "Evaluate organizational performance and program results using clear questions, appropriate indicators, and documented evidence.",
+      "title": "Institutional diagnostics, monitoring, and evaluation"
     },
     {
       "audience": "Client teams after a project, public institutions, universities, and professionals moving into data and AI roles.",
@@ -387,7 +381,6 @@
         "Curriculum built around your own data",
         "In person or remote, in French or English"
       ],
-      "ctaLabel": "Request in-house training",
       "family": "governance",
       "features": [
         "Applied AI and data science training for engineers, analysts and public-sector teams",
@@ -408,11 +401,11 @@
           "url": "https://digital-skills-jobs.europa.eu/en/latest/news/state-digital-decade-2026-without-urgent-action-eu-risks-missing-out-20-million-ict"
         }
       ],
-      "tagline": "Your team learns to run it, or we are not finished.",
+      "tagline": "Build practical AI and data skills through training, applied exercises, and mentoring tailored to your team.",
       "title": "PhysIQ Academy"
     },
     {
-      "audience": "Ministries, public agencies, universities, banks and telecoms, international organisations and NGOs in Cameroon and across Central and West Africa.",
+      "audience": "Ministries, public agencies, universities, banks and telecoms, international organizations, and NGOs in Cameroon and across Central and West Africa.",
       "benefits": [
         "Readiness before the regulator's guidance and inspections arrive",
         "Lower risk of fines and reputational damage",
@@ -423,18 +416,18 @@
         "Cross-border transfer files",
         "AI-use register and responsible-AI policy"
       ],
-      "ctaLabel": "Register early-partner interest",
       "family": "packaged",
       "features": [
         "Data mapping and records of processing",
         "Impact assessments for high-risk processing, including AI systems",
-        "Cross-border transfer files for authorisation requests",
+        "Cross-border transfer files for authorization requests",
         "Policies, notices and staff training (through PhysIQ Academy)",
         "An AI-use register and a responsible-AI policy aligned with the AU Continental AI Strategy",
         "A fixed-scope sprint with bilingual deliverables"
       ],
+      "lastReviewed": "2026-11-08",
       "order": 10,
-      "problem": "Cameroon's Law No. 2024/017 set an 18-month transition that ended in mid-2026. It requires impact assessments for high-risk processing and prior authorisation for cross-border transfers, with fines of up to XAF 100 million. Across Africa, 44 countries have data protection laws and 38 have regulators in operation. Many institutions and NGOs still have no record of their processing and no plan for AI use.",
+      "problem": "Cameroon's Law No. 2024/017 of December 23, 2024 set an 18-month transition that ended on June 23, 2026. It requires impact assessments for high-risk processing and prior authorization for cross-border transfers, with fines of up to XAF 100 million. Across Africa, 44 countries have data protection laws and 38 have regulators in operation. Many institutions and NGOs still have no record of their processing and no plan for AI use.",
       "slug": "data-protection-ai-readiness-sprint",
       "sources": [
         {
@@ -446,10 +439,10 @@
           "url": "https://digitalpolicyalert.org/blog/data-protection-in-africa-roundup"
         }
       ],
-      "summary": "A fixed-scope assessment of where your organisation stands against its data protection and AI obligations, and what to fix in what order. Five axes, diagnostic matrices, and a remediation plan with owners and sequence. Four weeks.",
-      "tagline": "Be compliant and ready before regulators ask, in English or French.",
+      "summary": "Assess current practices, identify priority gaps, and develop an action plan with clear responsibilities and milestones.",
+      "tagline": "Know where you stand before regulators ask, in English or French.",
       "title": "Data Protection and AI Readiness Sprint",
-      "whyNow": "The transition period of Cameroon's Law No. 2024/017 on personal data protection ended in mid-2026."
+      "whyNow": "The 18-month transition period of Cameroon's Law No. 2024/017 on personal data protection ended on June 23, 2026."
     },
     {
       "audience": "Machinery and equipment makers that embed AI in products, manufacturers that use AI at work, and compliance and quality leads. We prepare evidence and documentation; we are not a notified body and do not issue conformity certificates.",
@@ -462,7 +455,6 @@
         "Accuracy, robustness and uncertainty tests",
         "Technical documentation and gap plan"
       ],
-      "ctaLabel": "Register early-partner interest",
       "family": "packaged",
       "features": [
         "Inventory and classification of your AI systems against the AI Act",
@@ -471,58 +463,63 @@
         "A check of chatbots and document assistants against the transparency rules",
         "A gap report with a dated plan to the 2027 and 2028 deadlines"
       ],
+      "lastReviewed": "2026-11-08",
       "order": 11,
-      "problem": "The AI Act's transparency duties have applied since 2 August 2026. High-risk obligations follow on 2 December 2027, and on 2 August 2028 for AI embedded in regulated products such as machinery. Governance policies say a model must be \"accurate and robust\", but few manufacturers can produce the test evidence to show it.",
+      "problem": "The AI Act's transparency duties have applied since August 2, 2026. Regulation (EU) 2026/1744, in force since July 27, 2026, set high-risk obligations to apply from December 2, 2027, and from August 2, 2028 for AI embedded in regulated products such as machinery. Governance policies say a model must be \"accurate and robust,\" but few manufacturers can produce the test evidence to show it.",
       "slug": "ai-act-evidence-lab",
       "sources": [
         {
-          "label": "Gibson Dunn, AI Act omnibus agreement, 2026",
-          "url": "https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/"
+          "label": "EUR-Lex, Regulation (EU) 2026/1744 (Digital Omnibus on AI)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng"
+        },
+        {
+          "label": "EUR-Lex summary: rules for trustworthy AI in the EU",
+          "url": "https://eur-lex.europa.eu/EN/legal-content/summary/rules-for-trustworthy-artificial-intelligence-in-the-eu.html"
         }
       ],
-      "summary": "We build the documentation and evidence trail an EU AI Act conformity assessment will ask for: model documentation, data provenance, risk assessment, human oversight records and post-market monitoring design. We prepare the evidence; we do not carry out the conformity assessment or issue certificates.",
-      "tagline": "Test results and documents that prove your AI is accurate and robust.",
+      "summary": "Prepare model documentation, data provenance records, risk assessments, and oversight procedures to support your compliance process. We provide technical documentation support; we do not issue conformity certificates.",
+      "tagline": "Test results and documentation that show how accurate and robust your AI systems are.",
       "title": "AI Act Evidence Lab",
-      "whyNow": "EU AI Act high-risk obligations apply from 2 December 2027 and 2 August 2028."
+      "whyNow": "Under Regulation (EU) 2026/1744, high-risk obligations apply from December 2, 2027 (Annex III systems) and August 2, 2028 (AI in regulated products under Annex I)."
     },
     {
       "audience": "Corrugated and packaging converters, paper and board producers, and the brand owners who need conformity data from their suppliers.",
       "benefits": [
-        "One audited source for packaging compliance data",
+        "One traceable source for packaging compliance data",
         "Faster answers to customer and regulator data requests",
-        "Material savings from minimisation, measured against your own baseline"
+        "Potential material savings from minimization, measured against your own baseline"
       ],
       "cardBullets": [
         "Compliance data per SKU, traceable to ERP",
         "EPR reporting and batch traceability",
-        "Physics-informed minimisation modelling"
+        "Physics-informed minimization modeling"
       ],
-      "ctaLabel": "Register early-partner interest",
       "family": "packaged",
       "features": [
         "A compliance data product per SKU: materials, weights, substances, recyclability evidence",
         "Data lineage from your ERP to each compliance record",
         "EPR quantity reporting by packaging type and country",
         "Batch and serial traceability that links labels to production data",
-        "Minimisation modelling: physics-informed estimates of board strength against grammage, to find the lightest design that still performs"
+        "Minimization modeling: physics-informed estimates of board strength against grammage, to find the lightest design that still performs"
       ],
+      "lastReviewed": "2026-11-08",
       "order": 12,
-      "problem": "The PPWR has applied since 12 August 2026: substance limits, recyclability, minimisation, EPR registration and reporting, and labels with batch or serial numbers. Paper and cardboard packaging get no specific exemptions. The data exists, but it is spread across ERP, quality systems, supplier sheets and spreadsheets, while customers and authorities now want it per product, per batch and on demand.",
+      "problem": "The PPWR has applied since August 12, 2026: substance limits, recyclability, minimization, EPR registration and reporting, and labels with batch or serial numbers. Paper and cardboard packaging get no specific exemptions. The data exists, but it is spread across ERP, quality systems, supplier sheets, and spreadsheets, while customers and authorities now want it per product, per batch, and on demand.",
       "slug": "packaging-compliance-data-engine",
       "sources": [
         {
-          "label": "Gleiss Lutz, New EU Packaging Regulation",
-          "url": "https://www.gleisslutz.com/en/know-how/new-eu-packaging-regulation-key-requirements-august-2026"
+          "label": "EUR-Lex, Regulation (EU) 2025/40 (PPWR)",
+          "url": "https://eur-lex.europa.eu/eli/reg/2025/40/oj/eng"
         },
         {
-          "label": "Reuschlaw, PPWR applies from 12 August 2026",
-          "url": "https://www.reuschlaw.de/en/news/the-new-eu-packaging-regulation-ppwr-applies-from-12-august-2026/"
+          "label": "EUR-Lex summary: packaging and packaging waste (from 2026)",
+          "url": "https://eur-lex.europa.eu/EN/legal-content/summary/packaging-and-packaging-waste-from-2026.html"
         }
       ],
-      "summary": "A data engine for packaging and extended producer responsibility (EPR) reporting: material flows, recyclability evidence and compliance reporting against the EU packaging regulation timetable. Built on the same provenance discipline as our data engineering work, so every figure traces to its source record.",
+      "summary": "Build traceable data workflows for packaging materials, reporting, and supporting evidence, aligned with the requirements identified for your organization.",
       "tagline": "Turn the new EU packaging rules into data you already hold.",
       "title": "Packaging Compliance Data Engine",
-      "whyNow": "The EU Packaging and Packaging Waste Regulation (PPWR) has applied since 12 August 2026."
+      "whyNow": "Regulation (EU) 2025/40 on packaging and packaging waste (PPWR) has applied since August 12, 2026."
     }
   ],
   "posts": [

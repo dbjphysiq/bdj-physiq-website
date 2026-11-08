@@ -57,32 +57,29 @@ export const serviceHref = (slug: string) => (slug === FLAGSHIP.slug ? FLAGSHIP.
 export const FAMILIES = [
   {
     key: "engineering",
-    title: "Engineering and industrial AI",
-    intro: "For manufacturers, engineering teams and R&D groups working with physical processes.",
+    title: "Engineering and Industrial AI",
+    intro: "For manufacturers, engineering teams, and R&D groups working with physical processes.",
   },
   {
     key: "data",
-    title: "Data and analytics",
-    intro: "For organisations whose decisions depend on numbers they cannot currently trace.",
+    title: "Data Engineering and Analytics",
+    intro: "For organizations whose decisions depend on numbers they cannot currently trace.",
   },
   {
     key: "governance",
-    title: "Governance, institutions and capability",
-    intro: "For ministries, regulators, funds, programmes and companies selling into regulated markets.",
+    title: "AI Governance and Institutional Support",
+    intro: "For ministries, regulators, funds, programs, and companies selling into regulated markets.",
   },
 ] as const;
 
 export const PACKAGED = {
   key: "packaged",
-  title: "Built for the 2026 to 2028 compliance deadlines",
-  intro: "Fixed-scope programmes aimed at obligations with a date attached.",
+  title: "Prepare your data and AI systems for regulatory requirements.",
+  intro: "We help organizations assess readiness, organize supporting evidence, and strengthen reporting processes. Each engagement defines the relevant requirements, responsibilities, and deliverables.",
 };
 
 /** One line under the homepage hero. */
 export const STRAPLINE = "Delivered in French and English, by the people who built it.";
-
-/** Closing line of the homepage positioning block. */
-export const POSITIONING_NOTE = "Every model we deliver reports how far it should be trusted. Your data stays in your systems.";
 
 /** Homepage credibility line: plain text, no logos. */
 export const CREDIBILITY = [
@@ -96,14 +93,14 @@ export const CREDIBILITY = [
 export const DOORS = [
   {
     title: "For manufacturers and engineering teams",
-    text: "Faster design cycles without losing traceability. Process models, calibrated surrogates, and measurement campaigns designed to answer the question you actually have.",
-    label: "Engineering and industrial AI",
+    text: "Evaluate designs, understand process behavior, and identify opportunities to improve performance. We develop simulation tools, predictive models, and measurement plans around your engineering objectives.",
+    label: "Explore engineering services",
     href: "/services#engineering",
   },
   {
-    title: "For institutions, programmes and funds",
-    text: "Evidence you can defend. Data systems, analytics, AI governance and independent evaluation, built so your own team can run them afterwards.",
-    label: "Institutions and governance",
+    title: "For public institutions and development organizations",
+    text: "Strengthen data systems, evaluate programs, and establish practical AI governance. We deliver analysis and tools that support accountable decisions and can be maintained by your team.",
+    label: "Explore institutional services",
     href: "/services#governance",
   },
 ];
@@ -113,7 +110,7 @@ export const HOW_WE_WORK = [
   "A written scope before any work starts. You know what you are getting and what you are not.",
   "Fixed-price pilots of four to eight weeks. No open-ended engagements.",
   "A go or no-go decision at the end of the pilot, with no obligation either way.",
-  "Your data stays in your systems. Where it has to move, we work to your data processing terms.",
+  "We agree where data will be stored and processed before work begins. Any transfer follows the access controls and data-handling terms set for the engagement.",
   "Every forecast reports its uncertainty. A number without a bound is not a result.",
   "Documentation an auditor can follow: inputs, method, assumptions, limits.",
   "You keep the code. We hand over the scripts, the environment specification and the documentation, and we will train your team to run it.",
@@ -122,3 +119,24 @@ export const HOW_WE_WORK = [
 /** Shown beside the founder profile on the About page. */
 export const METHODS_NOTE =
   "We publish our methods. If a claim on this site matters to your decision, ask us for the paper or the code behind it.";
+
+/** Homepage summary of the flagship service (the full method is on its own page). */
+export const FLAGSHIP_HOME = {
+  subtitle: "Faster simulations. Clearer uncertainty.",
+  intro:
+    "Surrogate models approximate computationally expensive simulations, helping engineers explore more design options in less time. We develop and calibrate these models, evaluate prediction errors, and document the conditions under which the results can support engineering decisions.",
+  points: [
+    "Surrogate modeling using simulation or experimental data",
+    "Prediction intervals with documented assumptions and validation",
+    "Design optimization within engineering constraints",
+    "Inverse design for specified performance targets",
+  ],
+  cta: "Explore calibrated surrogate modeling",
+};
+
+/** Short founder introduction for the homepage; full credentials live on the About page. */
+export const FOUNDER_SUMMARY =
+  "DBJ PhysIQ Technologies was founded by Dr. Daliwa Joseph Bainamndi, whose background spans physics, AI, and data science. His work brings scientific modeling, uncertainty assessment, and practical data methods to industrial and institutional challenges.";
+
+/** The main contact button label, used site-wide. */
+export const CONTACT_CTA = "Discuss your project";

@@ -4,7 +4,7 @@ import { Button } from "@/components/Button";
 import { FounderPortrait } from "@/components/FounderPortrait";
 import { PageHero } from "@/components/PageHero";
 import { getAbout } from "@/lib/content";
-import { METHODS_NOTE, PAPER } from "@/lib/site";
+import { CONTACT_CTA, METHODS_NOTE, PAPER } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About and method",
@@ -34,11 +34,11 @@ export default async function AboutPage() {
       <Section border={false}>
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
           <div className="border-t-2 border-ink pt-7">
-            <h2 className="text-[2.25rem] font-semibold leading-[1.1] tracking-tight sm:text-5xl">Mission</h2>
+            <h2 className="text-[2.25rem] font-semibold leading-[1.1] tracking-tight sm:text-5xl">Our mission</h2>
             <p className="mt-5 text-xl leading-9">{a.mission}</p>
           </div>
           <div className="border-t-2 border-amber pt-7">
-            <h2 className="text-[2.25rem] font-semibold leading-[1.1] tracking-tight sm:text-5xl">Vision</h2>
+            <h2 className="text-[2.25rem] font-semibold leading-[1.1] tracking-tight sm:text-5xl">Our vision</h2>
             <p className="mt-5 text-xl leading-9">{a.vision}</p>
           </div>
         </div>
@@ -46,7 +46,7 @@ export default async function AboutPage() {
 
       <Section tone="paper" eyebrow="Trust" title="How we earn trust"><Columns items={a.approach} /></Section>
 
-      <Section id="method" eyebrow="Method" title="Our method, on every project" intro="Four steps, in this order, whatever the size of the engagement." grid>
+      <Section id="method" eyebrow="Method" title="How we deliver" intro="Our delivery process follows four stages, adapted to the scope and complexity of each engagement." grid>
         <ol className="relative grid gap-10 md:grid-cols-4 md:gap-8">
           <span aria-hidden className="absolute left-0 right-0 top-[7px] hidden h-px bg-gradient-to-r from-signal/60 via-signal/30 to-amber/60 md:block" />
           {a.method?.map((m, i, all) => (
@@ -89,7 +89,7 @@ export default async function AboutPage() {
       <Section tone="paper" eyebrow="Outlook" title="Where we are going">
         <Columns items={a.outlook} />
         <div className="mt-14 flex flex-wrap gap-3">
-          <Button href="/contact" arrow>Work with us</Button>
+          <Button href="/contact" arrow>{CONTACT_CTA}</Button>
           <Button href="/services/physiq-academy" variant="secondary">Join the Academy</Button>
         </div>
       </Section>

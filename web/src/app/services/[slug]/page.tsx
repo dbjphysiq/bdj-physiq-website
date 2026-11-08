@@ -4,7 +4,7 @@ import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { DarkBreadcrumb, PageHero } from "@/components/PageHero";
 import { getService, getServices } from "@/lib/content";
-import { FAMILIES, FLAGSHIP, PACKAGED, PILOT } from "@/lib/site";
+import { CONTACT_CTA, FAMILIES, FLAGSHIP, PACKAGED } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -45,7 +45,7 @@ export default async function ServicePage({ params }: Props) {
   if (!s) notFound();
 
   const badge =
-    s.family === "packaged" ? "Compliance programme" : FAMILIES.find((f) => f.key === s.family)?.title;
+    s.family === "packaged" ? "Regulatory readiness" : FAMILIES.find((f) => f.key === s.family)?.title;
   const backHref = `/services#${s.family === "packaged" ? PACKAGED.key : s.family}`;
 
   return (
@@ -86,19 +86,27 @@ export default async function ServicePage({ params }: Props) {
           <div className="on-dark relative overflow-hidden rounded-2xl bg-night p-7 text-mist">
             <div aria-hidden className="absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgb(42_120_214/0.35),transparent_60%)]" />
             <div className="relative">
-              <p className="font-display text-xl font-semibold text-white">Start with one decision</p>
-              <p className="mt-2 leading-7">A 30-minute call, with no obligation. Pilots run {PILOT.weeks} at a fixed price.</p>
-              <div className="mt-6"><Button href="/contact" variant="accent" arrow>{s.ctaLabel ?? "Book a scoping call"}</Button></div>
+              <p className="font-display text-xl font-semibold text-white">Start with an introductory call</p>
+              <p className="mt-2 leading-7">No obligation. Pilots are scoped and priced before work begins.</p>
+              <div className="mt-6"><Button href="/contact" variant="accent" arrow>{s.ctaLabel ?? CONTACT_CTA}</Button></div>
             </div>
           </div>
-          {s.sources && s.sources.length > 0 && (
+          {(!!s.sources?.length || !!s.lastReviewed) && (
             <div className="text-sm text-muted">
               <h2 className="text-lg font-semibold tracking-tight text-ink">Sources</h2>
               <ul className="mt-3 space-y-1.5">
-                {s.sources.map((src) => (
+                {(s.sources ?? []).map((src) => (
                   <li key={src.url}><a href={src.url} target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-ink">{src.label}</a></li>
                 ))}
               </ul>
+              {s.lastReviewed && (
+                <p className="mt-4">
+                  Last reviewed:{" "}
+                  <time dateTime={s.lastReviewed}>
+                    {new Date(`${s.lastReviewed}T12:00:00Z`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })}
+                  </time>
+                </p>
+              )}
             </div>
           )}
         </aside>

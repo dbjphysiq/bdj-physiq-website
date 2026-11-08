@@ -22,8 +22,9 @@ export const service = defineType({
     // Legacy field from the first site layout; no longer used by the website.
     defineField({ name: "category", type: "string", hidden: true }),
     defineField({ name: "order", title: "Display order", type: "number", initialValue: 99 }),
-    defineField({ name: "tagline", type: "string", validation: (r) => r.required().max(120) }),
+    defineField({ name: "tagline", type: "string", validation: (r) => r.required().max(140) }),
     defineField({ name: "summary", title: "Summary (compliance programmes)", type: "text", rows: 4, description: "Shown on the Services page for packaged offers.", hidden: ({ document }) => document?.family !== "packaged" }),
+    defineField({ name: "lastReviewed", title: "Regulatory dates last reviewed", type: "date", hidden: ({ document }) => document?.family !== "packaged" }),
     defineField({ name: "whyNow", title: "Why now (date + driver)", type: "string", hidden: ({ document }) => document?.family !== "packaged" }),
     defineField({ name: "statusNote", title: "Status note", type: "string" }),
     defineField({ name: "cardBullets", title: "Card bullets (max 3)", type: "array", of: [{ type: "string" }], validation: (r) => r.max(3) }),

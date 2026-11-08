@@ -7,7 +7,7 @@ import { Container } from "./Container";
 const SERVICE_LINKS = [
   { label: "Calibrated surrogate models", href: FLAGSHIP.path },
   ...FAMILIES.map((f) => ({ label: f.title, href: `/services#${f.key}` })),
-  { label: "Compliance programmes", href: "/services#packaged" },
+  { label: "Regulatory readiness", href: "/services#packaged" },
 ];
 
 export function Footer({ settings }: { settings: SiteSettings }) {

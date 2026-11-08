@@ -29,7 +29,6 @@ export function ServiceCard({ service, bullets = "card" }: Props) {
         </Link>
       </h3>
       <p className="mt-3 leading-7">{service.summary ?? service.tagline}</p>
-      {service.whyNow && <p className="mt-3 text-[15px] leading-6 text-muted">{service.whyNow}</p>}
       {items && items.length > 0 && (
         <ul className="mt-5 space-y-2.5 border-t border-line pt-5 text-[15px] leading-6 text-slate">
           {items.map((b) => (

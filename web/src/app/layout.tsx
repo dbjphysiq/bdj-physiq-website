@@ -26,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
     // would be inherited by every page and point them all at the homepage).
     icons: { icon: "/icon.svg" },
     // The social image comes from app/opengraph-image.tsx.
-    openGraph: { siteName: s.siteTitle, type: "website", locale: "en_GB", title, description: s.seoDescription },
+    openGraph: { siteName: s.siteTitle, type: "website", locale: "en_US", title, description: s.seoDescription },
     twitter: { card: "summary_large_image", title: s.siteTitle, description: s.seoDescription },
   };
 }
@@ -34,7 +34,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const settings = await getSiteSettings();
   return (
-    <html lang="en-GB" className={`${grotesk.variable} ${plex.variable} ${plexMono.variable}`}>
+    <html lang="en-US" className={`${grotesk.variable} ${plex.variable} ${plexMono.variable}`}>
       <body>
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-3 focus:py-2 focus:text-ink">
           Skip to content

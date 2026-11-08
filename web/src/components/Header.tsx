@@ -22,7 +22,7 @@ export function Header() {
             <Link key={n.href} href={n.href} className="text-mist transition-colors hover:text-white">{n.label}</Link>
           ))}
           <Link href="/contact" className="rounded-full bg-amber px-5 py-2.5 font-medium text-ink transition-colors hover:bg-amber-soft">
-            Book a scoping call
+            Discuss your project
           </Link>
         </nav>
         {/* Mobile menu without JavaScript */}
@@ -36,7 +36,7 @@ export function Header() {
               <Link key={n.href} href={n.href} className="block rounded-xl px-3.5 py-3 text-[15px] text-mist hover:bg-white/5 hover:text-white">{n.label}</Link>
             ))}
             <Link href="/contact" className="mt-1 block rounded-xl bg-amber px-3.5 py-3 text-center text-[15px] font-medium text-ink">
-              Book a scoping call
+              Discuss your project
             </Link>
           </div>
         </details>

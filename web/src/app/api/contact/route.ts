@@ -21,7 +21,7 @@ async function notify(lead: { name: string; email: string; organisation: string;
         from: process.env.LEAD_FROM_EMAIL ?? "DBJ PhysIQ <onboarding@resend.dev>",
         to: [to],
         reply_to: lead.email,
-        subject: `New enquiry from ${lead.name}${lead.organisation ? ` (${lead.organisation})` : ""}`,
+        subject: `New inquiry from ${lead.name}${lead.organisation ? ` (${lead.organisation})` : ""}`,
         text: `${lead.message}\n\nFrom: ${lead.name} <${lead.email}>`,
       }),
     });

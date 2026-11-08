@@ -3,22 +3,26 @@ import { Container } from "@/components/Container";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { getSiteSettings } from "@/lib/content";
+import { CONTACT_CTA } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Book a 30-minute scoping call with DBJ PhysIQ Technologies.",
+  description: "Discuss your project with DBJ PhysIQ Technologies. Tell us what you want to improve, in English or French.",
   alternates: { canonical: "/contact" },
 };
 
 export default async function ContactPage() {
   const s = await getSiteSettings();
-  const subject = encodeURIComponent("Scoping call request: DBJ PhysIQ");
+  const subject = encodeURIComponent("Project inquiry: DBJ PhysIQ");
   const body = encodeURIComponent(
-    "Organisation:\nRole:\nThe decision or process you want to improve:\nPreferred language (English/French):\nPreferred times (with your time zone):\n",
+    "Organization:\nRole:\nWhat you want to improve:\nData or systems involved:\nImportant deadlines:\nPreferred language (English/French):\n",
   );
   return (
     <>
-      <PageHero title={s.ctaHeading} intro={s.ctaBody} />
+      <PageHero
+        title="Let’s discuss your project."
+        intro="Tell us what you want to improve, the data or systems involved, and any important deadlines. In an introductory call, we will discuss your objectives, assess the initial fit, and outline the information needed to scope the work."
+      />
       <Container className="grid gap-16 py-16 sm:py-20 lg:grid-cols-[1.25fr_1fr]">
         <div>
           {process.env.DATABASE_URL ? (
@@ -26,21 +30,21 @@ export default async function ContactPage() {
           ) : (
             <a href={`mailto:${s.contactEmail}?subject=${subject}&body=${body}`}
               className="inline-flex rounded-full bg-ink px-6 py-3.5 font-medium text-white hover:bg-ink-2">
-              {s.primaryCta.label}
+              {CONTACT_CTA}
             </a>
           )}
           <p className="mt-8 max-w-xl text-[15px] leading-7 text-muted">
             Prefer email?{" "}
             <a className="text-signal underline underline-offset-4 hover:text-signal-dark" href={`mailto:${s.contactEmail}?subject=${subject}&body=${body}`}>Write to us directly</a>.
-            {" "}We reply in English or French. Tell us the decision you want to make, and we will tell you whether your data can support it.
+            {" "}We reply in English or French.
           </p>
           <div className="mt-12 border-t border-line pt-10">
             <h2 className="text-3xl font-semibold tracking-tight">What happens next</h2>
             <ol className="mt-6 space-y-7">
               {[
-                ["Send one paragraph", "Tell us the decision or process you want to improve, in English or French."],
-                ["We reply within two working days", "We arrange a 30-minute call at a time that suits your time zone."],
-                ["A clear answer on the call", "Whether your data can support the decision, what a pilot would cost, and how we would measure success. There is no obligation."],
+                ["Share a brief overview", "Describe your organization, the challenge, and the outcome you are seeking. You can write in English or French."],
+                ["Arrange an introductory call", "We will follow up to clarify your needs and arrange a suitable time."],
+                ["Agree on the next step", "Where there is a suitable fit, we will explain the assessment needed to prepare a scope, timeline, and proposal."],
               ].map(([title, text], i) => (
                 <li key={title} className="grid grid-cols-[44px_1fr] gap-4">
                   <span aria-hidden className="flex h-11 w-11 items-center justify-center rounded-full border border-line font-mono text-[13px] text-signal">
@@ -55,7 +59,7 @@ export default async function ContactPage() {
             </ol>
           </div>
         </div>
-        <dl className="grid content-start gap-px overflow-hidden rounded-2xl border border-line bg-line">
+        <dl className="grid content-start gap-px self-start overflow-hidden rounded-2xl border border-line bg-line">
           <div className="bg-white p-6">
             <dt className="text-lg font-semibold text-ink">Email</dt>
             <dd className="mt-2"><a className="break-all text-base font-medium text-signal hover:underline" href={`mailto:${s.contactEmail}`}>{s.contactEmail}</a></dd>

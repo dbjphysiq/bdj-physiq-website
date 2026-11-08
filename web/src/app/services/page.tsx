@@ -6,27 +6,27 @@ import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
 import { ServiceCard } from "@/components/ServiceCard";
 import { getServices } from "@/lib/content";
-import { FAMILIES, HOW_WE_WORK, PACKAGED } from "@/lib/site";
+import { CONTACT_CTA, FAMILIES, HOW_WE_WORK, PACKAGED } from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/services" },
   title: "Services",
   description:
-    "Nine services in three families, engineering, data and institutions, plus fixed-scope programmes for the 2026 to 2028 compliance deadlines.",
+    "Engineering and industrial AI, data engineering and analytics, and AI governance and institutional support, plus regulatory readiness engagements.",
 };
 
 export default async function ServicesPage() {
   const services = await getServices();
   const packaged = services.filter((s) => s.family === "packaged");
-  const nav = [...FAMILIES.map((f) => ({ key: f.key, title: f.title })), { key: PACKAGED.key, title: "Compliance programmes" }];
+  const nav = [...FAMILIES.map((f) => ({ key: f.key, title: f.title })), { key: PACKAGED.key, title: "Regulatory readiness" }];
 
   return (
     <>
       <PageHero
-        title="Services"
-        intro="Nine services in three families. Every one of them ends the same way: you keep the code, the documentation and the ability to run it without us."
+        title="Expertise across engineering, data, and AI governance."
+        intro="We help organizations model physical systems, build reliable data workflows, and establish practical governance. Each engagement includes an agreed scope, defined deliverables, and a clear plan for implementation or handover."
       >
-        <Button href="/contact" variant="accent" arrow>Talk to us</Button>
+        <Button href="/contact" variant="accent" arrow>{CONTACT_CTA}</Button>
       </PageHero>
 
       <nav aria-label="Service families" className="sticky top-[69px] z-30 border-b border-line bg-white/95 backdrop-blur">
@@ -75,7 +75,7 @@ export default async function ServicesPage() {
           })}
         </ol>
         <div className="mt-12">
-          <Button href="/contact" arrow>Book a 30-minute scoping call</Button>
+          <Button href="/contact" arrow>{CONTACT_CTA}</Button>
         </div>
       </Section>
     </>

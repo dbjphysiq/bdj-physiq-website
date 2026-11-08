@@ -6,7 +6,7 @@ import { getPosts } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Insights",
-  description: "Notes on physics-informed AI, data engineering and responsible AI.",
+  description: "Notes on physics-informed AI, data engineering, and responsible AI.",
   alternates: { canonical: "/insights" },
 };
 
@@ -17,7 +17,7 @@ export default async function InsightsPage() {
   return (
     <>
       <PageHero title="Insights"
-        intro="Notes from our work on physics-informed AI, data engineering and responsible AI." />
+        intro="Notes from our work on physics-informed AI, data engineering, and responsible AI." />
       <Container className="py-16 sm:py-20">
         <ul className="border-t border-line">
           {posts.map((p) => (

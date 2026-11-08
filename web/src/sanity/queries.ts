@@ -17,7 +17,7 @@ export const ABOUT_QUERY = defineQuery(`*[_type == "aboutPage"][0]{
 }`);
 
 const SERVICE_FIELDS = `
-  title, "slug": slug.current, family, order, tagline, summary, whyNow, statusNote,
+  title, "slug": slug.current, family, order, tagline, summary, lastReviewed, whyNow, statusNote,
   cardBullets, problem, features, benefits, audience, ctaLabel,
   sources[]{label, url}
 `;

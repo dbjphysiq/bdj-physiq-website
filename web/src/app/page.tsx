@@ -8,7 +8,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { UncertaintyChart } from "@/components/UncertaintyChart";
 import { WaveField } from "@/components/WaveField";
 import { getAbout, getServices, getSiteSettings } from "@/lib/content";
-import { CREDIBILITY, DOORS, FAMILIES, FLAGSHIP, PACKAGED, PAPER, PILOT, POSITIONING_NOTE, STRAPLINE, serviceHref } from "@/lib/site";
+import { CONTACT_CTA, CREDIBILITY, DOORS, FAMILIES, FLAGSHIP, FLAGSHIP_HOME, FOUNDER_SUMMARY, PACKAGED, PAPER, PILOT, STRAPLINE, serviceHref } from "@/lib/site";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
@@ -62,7 +62,7 @@ export default async function HomePage() {
               <UncertaintyChart />
             </div>
             <figcaption className="mt-5 max-w-md text-[15px] leading-6 text-mist/80">
-              Every forecast we deliver carries its uncertainty range. It narrows as measured data arrives.
+              Our forecasts include uncertainty estimates to help your team interpret the results. We update those estimates as new measurements become available.
             </figcaption>
           </figure>
         </Container>
@@ -81,7 +81,7 @@ export default async function HomePage() {
       <section aria-labelledby="credibility-label" className="border-b border-line bg-white">
         <Container className="py-7">
           <h2 id="credibility-label" className="sr-only">Credentials</h2>
-          <ul className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[14px] leading-6 text-slate lg:justify-between">
+          <ul className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[14px] leading-6 text-slate lg:gap-x-5">
             {CREDIBILITY.map((c) => (
               <li key={c} className="flex items-center gap-3">
                 <span aria-hidden className="h-1 w-1 shrink-0 rounded-full bg-signal/60" />
@@ -94,7 +94,6 @@ export default async function HomePage() {
 
       {/* ───────────── Value and method ───────────── */}
       <Section title={s.valueHeading} intro={s.valueBody} border={false} grid>
-        <p className="-mt-6 mb-14 max-w-2xl border-l-2 border-amber pl-4 text-lg font-medium leading-8 text-ink">{POSITIONING_NOTE}</p>
         <ol className="relative grid gap-10 md:grid-cols-3 md:gap-8">
           <span aria-hidden className="absolute left-0 right-0 top-[7px] hidden h-px bg-gradient-to-r from-signal/60 via-signal/30 to-amber/60 md:block" />
           {s.valuePillars?.map((p, i) => (
@@ -126,22 +125,19 @@ export default async function HomePage() {
       </section>
 
       {/* ───────────── Flagship and the nine services ───────────── */}
-      <Section border={false} title={flagship?.title ?? "Calibrated surrogate models"} intro={flagship?.problem}>
+      <Section border={false} eyebrow={flagship?.title ?? "Calibrated surrogate models"} title={FLAGSHIP_HOME.subtitle} intro={FLAGSHIP_HOME.intro}>
         <div className="grid gap-14 lg:grid-cols-[1fr_1.4fr] lg:gap-14">
           <div>
-            {flagship?.features && (
-              <ul className="space-y-4">
-                {flagship.features.map((f) => (
-                  <li key={f} className="grid grid-cols-[22px_1fr] gap-3 text-[17px] leading-7">
-                    <svg aria-hidden viewBox="0 0 20 20" className="mt-1 h-5 w-5 text-signal"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-            )}
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Button href={FLAGSHIP.path} arrow>See how we calibrate a model</Button>
-              <Button href={`https://doi.org/${PAPER.doi}`} variant="secondary">Read the paper</Button>
+            <ul className="space-y-4">
+              {FLAGSHIP_HOME.points.map((f) => (
+                <li key={f} className="grid grid-cols-[22px_1fr] gap-3 text-[17px] leading-7">
+                  <svg aria-hidden viewBox="0 0 20 20" className="mt-1 h-5 w-5 text-signal"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-10">
+              <Button href={FLAGSHIP.path} arrow>{FLAGSHIP_HOME.cta}</Button>
             </div>
           </div>
           <div className="rounded-2xl border border-line bg-paper p-7 sm:p-9">
@@ -184,7 +180,7 @@ export default async function HomePage() {
               The physics we publish, applied to your process.
             </p>
             <p className="mt-6 max-w-xl text-lg leading-8">
-              Physics-informed models, calibrated uncertainty and design optimisation, peer-reviewed in the {PAPER.venue}.
+              Physics-informed models, calibrated uncertainty, and design optimization, peer-reviewed in the {PAPER.venue}.
               We bring the same toolkit, and the same standard of evidence, to industrial forecasting.
             </p>
           </div>
@@ -206,14 +202,14 @@ export default async function HomePage() {
       </section>
 
       {/* ───────────── Fixed-price pilot ───────────── */}
-      <Section eyebrow="Fixed-price pilot" title="Start with one pilot, priced before it begins."
-        intro="A pilot answers one question about your process, on your own data, before you commit to anything larger." border={false}>
+      <Section title="Start with a clearly scoped pilot."
+        intro="A pilot addresses one defined question using your data. Before work begins, we agree on the scope, deliverables, schedule, price, and evaluation criteria. At completion, you receive documented findings and a recommendation on the next step." border={false}>
         <dl className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
           {[
             ["Duration", PILOT.weeks, null],
             ["Fixed price", PILOT.eur, PILOT.usd],
-            ["Scope", "Written scope and success measures, agreed at the start", null],
-            ["Decision", "A clear go or no-go decision at the end", null],
+            ["Scope", "Scope, deliverables, schedule, price, and evaluation criteria agreed before work begins", null],
+            ["Decision", "A recommendation to proceed, revise the approach, or stop", null],
           ].map(([label, value, note]) => (
             <div key={label} className="bg-white p-7">
               <dt className="font-display text-xl font-semibold tracking-tight text-ink">{label}</dt>
@@ -226,10 +222,11 @@ export default async function HomePage() {
           <h3 className="text-xl font-semibold tracking-tight">What you receive</h3>
           <ul className="grid gap-x-10 gap-y-5 sm:grid-cols-2">
             {[
-              "A data audit: the gaps that matter, and how to close them",
-              "A model that respects the physics of your process and states how certain each forecast is",
-              "Integration into your systems, and training for the people who will use it",
-              "Full documentation, readable by your engineers and your auditors",
+              "A review of data quality, availability, and limitations",
+              "An agreed prototype or analysis addressing the pilot question",
+              "Validation results measured against agreed criteria",
+              "Documentation and a walkthrough with your team",
+              "A recommendation to proceed, revise the approach, or stop",
             ].map((item) => (
               <li key={item} className="grid grid-cols-[20px_1fr] gap-3 leading-7">
                 <svg aria-hidden viewBox="0 0 20 20" className="mt-1 h-5 w-5 text-signal"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -272,14 +269,14 @@ export default async function HomePage() {
       )}
 
       {/* ───────────── Working with international clients ───────────── */}
-      <Section tone="paper" eyebrow="Working with international clients" title="Built for clients in the US and Europe."
-        intro="We work remotely and inside your systems, with the structure your procurement team expects.">
+      <Section tone="paper" title="International delivery. Clear responsibilities."
+        intro="Based in Cameroon, we work with international clients in English and French. Each engagement establishes communication arrangements, access requirements, deliverables, and handover responsibilities.">
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {[
             ["Overlapping hours", "We work on West Africa Time (UTC+1). Our afternoons overlap US Eastern mornings, and we share the European working day. English and French."],
             ["A registered company", "Contracts and invoices come from DBJ PhysIQ Technologies SARL, a company registered under OHADA business law."],
-            ["Your data stays with you", "We work in your environment, under your access controls. Where data has to move, we work to your data processing terms."],
-            ["Documented hand-over", "Every model has a named owner and full documentation, so your own team can run it after we hand it over."],
+            ["Your environment, your controls", "We agree on where data will be stored and processed before work begins. Any required transfer follows the access controls and data-handling terms established for the engagement."],
+            ["A documented handover", "Your team receives the agreed code, operating instructions, validation results, and training needed to manage the delivered solution."],
           ].map(([title, text], i) => (
             <div key={title} className="rounded-2xl border border-line bg-white p-7">
               <p className="font-mono text-[12px] tracking-[0.14em] text-signal">{String(i + 1).padStart(2, "0")}</p>
@@ -292,25 +289,13 @@ export default async function HomePage() {
 
       {/* ───────────── Founder ───────────── */}
       <Section border={false}>
-        <div className="grid gap-12 lg:grid-cols-[380px_1fr] lg:gap-16">
-          <FounderPortrait photo={about.founderPhoto} name={about.founderName} className="max-w-sm lg:max-w-none" />
+        <div className="grid gap-12 lg:grid-cols-[300px_1fr] lg:items-center lg:gap-16">
+          <FounderPortrait photo={about.founderPhoto} name={about.founderName} className="max-w-xs lg:max-w-none" />
           <div className="lg:pt-2">
-            <h2 className="text-[2.25rem] font-semibold leading-[1.1] tracking-tight sm:text-5xl">{about.founderName}</h2>
-            {about.founderRole && <p className="mt-4 font-display text-xl font-medium tracking-tight text-ink/80 sm:text-[1.6rem]">{about.founderRole}</p>}
-            {about.founderBio && <p className="mt-6 max-w-[62ch] text-lg leading-8">{about.founderBio}</p>}
-            <ul className="mt-8 max-w-[68ch] divide-y divide-line border-y border-line">
-              {about.founderCredentials?.slice(0, 5).map((c) => (
-                <li key={c} className="grid grid-cols-[14px_1fr] gap-3 py-3.5 leading-7">
-                  <span aria-hidden className="mt-[0.8rem] h-[2px] w-3 rounded-full bg-signal" />{c}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-8 max-w-[62ch] rounded-xl border-l-2 border-amber bg-paper px-5 py-4 leading-7 text-ink">
-              We are a new company, so we show no client logos we have not earned. Every credential on this page can be checked.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="/about#founder" variant="secondary" arrow>Full profile</Button>
-              {about.publicationUrl && <Button href={about.publicationUrl} variant="secondary">Read the JASA paper</Button>}
+            <h2 className="text-[2.25rem] font-semibold leading-[1.1] tracking-tight sm:text-5xl">Scientific leadership</h2>
+            <p className="mt-6 max-w-[62ch] text-lg leading-8">{FOUNDER_SUMMARY}</p>
+            <div className="mt-8">
+              <Button href="/about#founder" variant="secondary" arrow>Explore the founder&apos;s background and research</Button>
             </div>
           </div>
         </div>
@@ -328,7 +313,7 @@ export default async function HomePage() {
             <p className="mt-6 max-w-xl text-lg leading-8">{s.ctaBody}</p>
           </div>
           <div className="flex flex-col items-start gap-4 lg:items-end">
-            <Button href="/contact" variant="accent" arrow>Book a 30-minute scoping call</Button>
+            <Button href="/contact" variant="accent" arrow>{CONTACT_CTA}</Button>
             <a href={`mailto:${s.contactEmail}`} className="text-[15px] text-mist/80 underline-offset-4 hover:text-white hover:underline">
               or email {s.contactEmail}
             </a>
