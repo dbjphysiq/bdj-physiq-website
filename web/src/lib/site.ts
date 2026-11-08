@@ -24,7 +24,7 @@ export const PILOT = {
  * mistakes them for clients.
  */
 export const AFFILIATIONS = [
-  { name: "Fulbright", detail: "Visiting Researcher, University of Missouri" },
+  { name: "Fulbright", detail: "Scholar Researcher, University of Missouri" },
   { name: "Chevening", detail: "MSc AI & Data Science, University of Hull" },
   { name: "CNRS", detail: "Associate Researcher, LOMC, Le Havre" },
   { name: "J. Acoust. Soc. Am.", detail: "Peer-reviewed publication, 2026" },

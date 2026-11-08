@@ -13,14 +13,14 @@ export const metadata: Metadata = {
 export default async function ServicesPage() {
   const services = await getServices();
   const groups = [
-    { key: "core", eyebrow: "Core", title: "Core services", intro: "Every engagement follows the same four steps: discover, build, test and hand over. Your data stays in your systems, and a named person stays in charge of every model." },
-    { key: "accelerator", eyebrow: "In development", title: "PhysIQ accelerators", intro: "Reusable kits that shorten every project. They are in development and refined on client work." },
-    { key: "innovation", eyebrow: "Open to early partners", title: "New services", intro: "Open to early partners now. We shape each service with its first clients." },
+    { key: "core", title: "Core services", intro: "Every engagement follows the same four steps: discover, build, test and hand over. Your data stays in your systems, and a named person stays in charge of every model." },
+    { key: "accelerator", title: "PhysIQ accelerators", intro: "Reusable kits that shorten every project. They are in development and refined on client work." },
+    { key: "innovation", title: "New services", intro: "Open to early partners now. We shape each service with its first clients." },
   ] as const;
 
   return (
     <>
-      <PageHero eyebrow="Services" title="Services that take AI from pilot to production"
+      <PageHero title="Services that take AI from pilot to production"
         intro="Choose the service that matches your problem, or start with a fixed-price pilot.">
         <Button href="/contact" variant="accent" arrow>Book a 30-minute scoping call</Button>
       </PageHero>
@@ -28,7 +28,7 @@ export default async function ServicesPage() {
         const items = services.filter((s) => s.category === g.key);
         if (!items.length) return null;
         return (
-          <Section key={g.key} tone={i % 2 ? "paper" : "white"} border={false} eyebrow={g.eyebrow} title={g.title} intro={g.intro}>
+          <Section key={g.key} tone={i % 2 ? "paper" : "white"} border={false} title={g.title} intro={g.intro}>
             <div className={`grid gap-5 sm:grid-cols-2 ${g.key === "innovation" ? "" : "lg:grid-cols-3"}`}>
               {items.map((s, j) => <ServiceCard key={s.slug} service={s} index={g.key === "core" ? j : undefined} />)}
             </div>

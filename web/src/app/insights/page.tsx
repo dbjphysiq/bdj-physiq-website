@@ -12,7 +12,7 @@ export default async function InsightsPage() {
   const posts = await getPosts();
   return (
     <>
-      <PageHero eyebrow="Field notes" title="Insights"
+      <PageHero title="Insights"
         intro="Notes from our work on physics-informed AI, data engineering and responsible AI." />
       <Container className="py-16 sm:py-20">
         <ul className="border-t border-line">

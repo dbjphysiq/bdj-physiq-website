@@ -40,7 +40,7 @@ export default async function PostPage({ params }: Props) {
     <>
       <PageHero
         breadcrumb={<DarkBreadcrumb items={[{ label: "Insights", href: "/insights" }, { label: "Article" }]} />}
-        eyebrow={date}
+        meta={date}
         title={post.title}
         intro={post.excerpt}
       />

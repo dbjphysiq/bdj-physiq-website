@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
-import { Eyebrow } from "@/components/Eyebrow";
 import { FounderPortrait } from "@/components/FounderPortrait";
 import { Section } from "@/components/Section";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -34,8 +33,7 @@ export default async function HomePage() {
         <Container className="grid items-center gap-14 pb-16 pt-16 sm:pt-24 lg:grid-cols-[1.12fr_1fr] lg:gap-16 lg:pb-24 lg:pt-28">
           {/* No entrance animation here: this block holds the LCP element (the headline). */}
           <div>
-            <Eyebrow tone="dark">Physics-informed AI · Data engineering · AI governance</Eyebrow>
-            <h1 className="mt-6 text-[2.6rem] font-semibold leading-[1.04] tracking-tight text-white sm:text-6xl lg:text-[4rem]">
+            <h1 className="text-[2.6rem] font-semibold leading-[1.04] tracking-tight text-white sm:text-6xl lg:text-[4rem]">
               {s.heroHeadline}
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-8 text-mist sm:text-xl sm:leading-9">{s.heroSubheadline}</p>
@@ -57,7 +55,8 @@ export default async function HomePage() {
           <figure className="relative m-0 animate-fade [animation-delay:250ms]">
             {/* Blur filters are costly to paint on phones, where this card sits below the fold. */}
             <div aria-hidden className="absolute -inset-6 -z-10 hidden rounded-[2rem] bg-signal/10 blur-3xl lg:block" />
-            <div className="rounded-2xl border border-white/10 bg-night-2/80 p-5 shadow-[0_40px_80px_-30px_rgb(0_0_0/0.7)] sm:p-7 lg:bg-white/[0.04] lg:backdrop-blur-md">
+            {/* Mostly opaque so the wave field never shows through the chart, even where backdrop blur is unsupported. */}
+            <div className="rounded-2xl border border-white/10 bg-night-2/90 p-5 shadow-[0_40px_80px_-30px_rgb(0_0_0/0.7)] sm:p-7 lg:backdrop-blur-md">
               <div className="mb-5 flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.14em] text-mist/70">
                 <span className="flex items-center gap-2">
                   <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-amber" />
@@ -76,7 +75,7 @@ export default async function HomePage() {
         {/* Audience paths */}
         <div className="border-t border-white/10 bg-night/40">
           <Container className="flex flex-wrap items-center gap-x-3 gap-y-3 py-5 text-[15px]">
-            <span className="mr-2 font-mono text-[12px] uppercase tracking-[0.14em] text-mist/60">Start with</span>
+            <span className="mr-2 text-base font-semibold text-white">Start with</span>
             {START_WITH.map(([label, href]) => (
               <Link key={href} href={href}
                 className="rounded-full border border-white/15 px-4 py-1.5 text-mist transition-colors hover:border-amber/60 hover:text-white">
@@ -89,10 +88,10 @@ export default async function HomePage() {
 
       {/* ───────────── Founder's affiliations (not clients) ───────────── */}
       <section aria-labelledby="affiliations-label" className="border-b border-line bg-white">
-        <Container className="grid gap-8 py-10 lg:grid-cols-[220px_1fr] lg:items-center">
-          <p id="affiliations-label" className="font-mono text-[12px] uppercase leading-5 tracking-[0.14em] text-muted">
+        <Container className="grid gap-8 py-10 lg:grid-cols-[240px_1fr] lg:items-center">
+          <h2 id="affiliations-label" className="font-display text-xl font-semibold leading-7 tracking-tight text-ink">
             The founder&apos;s training and research
-          </p>
+          </h2>
           <ul className="grid grid-cols-2 gap-y-6 md:grid-cols-4">
             {AFFILIATIONS.map((a) => (
               <li key={a.name} className="border-l border-line pl-5">
@@ -111,8 +110,7 @@ export default async function HomePage() {
           {s.valuePillars?.map((p, i) => (
             <li key={p.title} className="relative">
               <span aria-hidden className={`relative z-10 block h-[15px] w-[15px] rounded-full border-[3px] border-white ${i === 2 ? "bg-amber" : "bg-signal"} shadow-[0_0_0_1px_rgb(11_37_69/0.15)]`} />
-              <p className="mt-6 font-mono text-[12px] font-medium tracking-[0.14em] text-muted">STEP {String(i + 1).padStart(2, "0")}</p>
-              <h3 className="mt-2 text-2xl font-semibold tracking-tight">{p.title}</h3>
+              <h3 className="mt-6 text-2xl font-semibold tracking-tight">{p.title}</h3>
               <p className="mt-3 max-w-sm leading-7">{p.text}</p>
             </li>
           ))}
@@ -141,18 +139,19 @@ export default async function HomePage() {
           className="mask-field-soft absolute inset-0 -z-10 h-full w-full" />
         <Container className="grid gap-14 lg:grid-cols-[1.1fr_1fr] lg:items-center">
           <div>
-            <Eyebrow tone="dark">Peer-reviewed research</Eyebrow>
-            <h2 className="mt-5 max-w-xl text-3xl font-semibold tracking-tight text-white sm:text-[2.6rem] sm:leading-[1.12]">
-              The physics we publish, applied to your process.
+            <h2 className="max-w-xl text-[2.25rem] font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl">
+              Peer-reviewed research
             </h2>
+            <p className="mt-4 max-w-xl font-display text-xl font-medium leading-snug tracking-tight text-white/85 sm:text-[1.6rem]">
+              The physics we publish, applied to your process.
+            </p>
             <p className="mt-6 max-w-xl text-lg leading-8">
               Physics-informed models, calibrated uncertainty and design optimisation, peer-reviewed in the {PAPER.venue}.
               We bring the same toolkit, and the same standard of evidence, to industrial forecasting.
             </p>
           </div>
-          <figure className="m-0 rounded-2xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur-md sm:p-8">
-            <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-amber">Publication</p>
-            <blockquote className="mt-4 font-display text-xl font-medium leading-snug text-white sm:text-2xl">
+          <figure className="m-0 rounded-2xl border border-white/10 bg-night-2/90 p-7 backdrop-blur-md sm:p-8">
+            <blockquote className="font-display text-xl font-medium leading-snug text-white sm:text-2xl">
               {PAPER.title}
             </blockquote>
             <figcaption className="mt-5 border-t border-white/10 pt-5 text-[15px] leading-6">
@@ -177,10 +176,10 @@ export default async function HomePage() {
             ["Fixed price", PILOT.eur, PILOT.usd],
             ["Scope", "Written scope and success measures, agreed at the start", null],
             ["Decision", "A clear go or no-go decision at the end", null],
-          ].map(([label, value, note], i) => (
+          ].map(([label, value, note]) => (
             <div key={label} className="bg-white p-7">
-              <dt className="font-mono text-[12px] uppercase tracking-[0.14em] text-muted">{label}</dt>
-              <dd className={`mt-3 ${i < 2 ? "font-display text-2xl font-semibold tracking-tight text-ink" : "text-[17px] leading-7 text-ink"}`}>{value}</dd>
+              <dt className="font-display text-xl font-semibold tracking-tight text-ink">{label}</dt>
+              <dd className="mt-2.5 text-[17px] leading-7">{value}</dd>
               {note && <dd className="mt-1.5 text-[15px] text-muted">{note}</dd>}
             </div>
           ))}
@@ -222,7 +221,7 @@ export default async function HomePage() {
                 <dt className="font-display text-[2.6rem] font-semibold leading-none tracking-tight text-ink">{st.value}</dt>
                 <dd className="mt-4 leading-7">{st.caption}</dd>
                 {st.sourceLabel && (
-                  <dd className="mt-auto pt-5 font-mono text-[11.5px] uppercase tracking-[0.08em] text-muted">
+                  <dd className="mt-auto pt-5 text-[13.5px] text-muted">
                     Source:{" "}
                     {st.sourceUrl
                       ? <a href={st.sourceUrl} className="underline underline-offset-2 hover:text-ink" rel="noopener" target="_blank">{st.sourceLabel}</a>
@@ -259,9 +258,8 @@ export default async function HomePage() {
         <div className="grid gap-12 lg:grid-cols-[380px_1fr] lg:gap-16">
           <FounderPortrait photo={about.founderPhoto} name={about.founderName} className="max-w-sm lg:max-w-none" />
           <div className="lg:pt-2">
-            <Eyebrow>Founder</Eyebrow>
-            <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-[2.4rem] sm:leading-[1.12]">{about.founderName}</h2>
-            {about.founderRole && <p className="mt-2 text-lg text-muted">{about.founderRole}</p>}
+            <h2 className="text-[2.25rem] font-semibold leading-[1.1] tracking-tight sm:text-5xl">{about.founderName}</h2>
+            {about.founderRole && <p className="mt-4 font-display text-xl font-medium tracking-tight text-ink/80 sm:text-[1.6rem]">{about.founderRole}</p>}
             {about.founderBio && <p className="mt-6 max-w-[62ch] text-lg leading-8">{about.founderBio}</p>}
             <ul className="mt-8 max-w-[68ch] divide-y divide-line border-y border-line">
               {about.founderCredentials?.slice(0, 5).map((c) => (
@@ -289,8 +287,7 @@ export default async function HomePage() {
           className="mask-field-soft absolute inset-0 -z-10 h-full w-full" />
         <Container className="grid items-end gap-10 py-20 sm:py-28 lg:grid-cols-[1.4fr_1fr]">
           <div>
-            <Eyebrow tone="dark">Next step</Eyebrow>
-            <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-[2.8rem] sm:leading-[1.1]">{s.ctaHeading}</h2>
+            <h2 className="text-[2.25rem] font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl">{s.ctaHeading}</h2>
             <p className="mt-6 max-w-xl text-lg leading-8">{s.ctaBody}</p>
           </div>
           <div className="flex flex-col items-start gap-4 lg:items-end">

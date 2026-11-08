@@ -50,7 +50,7 @@ export default async function ServicePage({ params }: Props) {
     <>
       <PageHero
         breadcrumb={<DarkBreadcrumb items={[{ label: "Services", href: "/services" }, { label: s.title }]} />}
-        eyebrow={badge}
+        meta={badge}
         title={s.title}
         intro={s.tagline}
       >
@@ -78,21 +78,21 @@ export default async function ServicePage({ params }: Props) {
         <aside className="space-y-8 lg:sticky lg:top-28 lg:self-start">
           {s.audience && (
             <div className="rounded-2xl border border-line p-7">
-              <h2 className="font-mono text-[12px] font-medium uppercase tracking-[0.14em] text-muted">Who it is for</h2>
-              <p className="mt-3 leading-7 text-ink">{s.audience}</p>
+              <h2 className="text-xl font-semibold tracking-tight">Who it is for</h2>
+              <p className="mt-3 leading-7">{s.audience}</p>
             </div>
           )}
           <div className="on-dark relative overflow-hidden rounded-2xl bg-night p-7 text-mist">
             <div aria-hidden className="absolute inset-0 bg-[radial-gradient(circle_at_100%_0%,rgb(42_120_214/0.35),transparent_60%)]" />
             <div className="relative">
-              <p className="font-display text-lg font-semibold text-white">Start with one decision</p>
+              <p className="font-display text-xl font-semibold text-white">Start with one decision</p>
               <p className="mt-2 leading-7">A 30-minute call, with no obligation. Pilots run {PILOT.weeks} at a fixed price.</p>
               <div className="mt-6"><Button href="/contact" variant="accent" arrow>{s.ctaLabel ?? "Book a scoping call"}</Button></div>
             </div>
           </div>
           {s.sources && s.sources.length > 0 && (
             <div className="text-sm text-muted">
-              <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-ink">Sources</p>
+              <h2 className="text-lg font-semibold tracking-tight text-ink">Sources</h2>
               <ul className="mt-3 space-y-1.5">
                 {s.sources.map((src) => (
                   <li key={src.url}><a href={src.url} target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-ink">{src.label}</a></li>

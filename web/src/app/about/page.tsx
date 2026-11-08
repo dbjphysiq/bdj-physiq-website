@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Section } from "@/components/Section";
 import { Button } from "@/components/Button";
-import { Eyebrow } from "@/components/Eyebrow";
 import { FounderPortrait } from "@/components/FounderPortrait";
 import { PageHero } from "@/components/PageHero";
 import { getAbout } from "@/lib/content";
@@ -14,7 +13,7 @@ function Columns({ items }: { items?: { title: string; text: string }[] }) {
     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {items?.map((i) => (
         <div key={i.title} className="rounded-2xl border border-line bg-white p-7">
-          <h3 className="text-xl font-semibold tracking-tight">{i.title}</h3>
+          <h3 className="text-2xl font-semibold tracking-tight">{i.title}</h3>
           <p className="mt-3 leading-7">{i.text}</p>
         </div>
       ))}
@@ -26,17 +25,17 @@ export default async function AboutPage() {
   const a = await getAbout();
   return (
     <>
-      <PageHero eyebrow="About and method" title={a.heading} />
+      <PageHero title={a.heading} />
 
       <Section border={false}>
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
-          <div className="border-t-2 border-ink pt-6">
-            <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-signal">Mission</p>
-            <p className="mt-4 text-xl leading-9 text-ink">{a.mission}</p>
+          <div className="border-t-2 border-ink pt-7">
+            <h2 className="text-[2.25rem] font-semibold leading-[1.1] tracking-tight sm:text-5xl">Mission</h2>
+            <p className="mt-5 text-xl leading-9">{a.mission}</p>
           </div>
-          <div className="border-t-2 border-amber pt-6">
-            <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-[#7a5300]">Vision</p>
-            <p className="mt-4 text-xl leading-9 text-ink">{a.vision}</p>
+          <div className="border-t-2 border-amber pt-7">
+            <h2 className="text-[2.25rem] font-semibold leading-[1.1] tracking-tight sm:text-5xl">Vision</h2>
+            <p className="mt-5 text-xl leading-9">{a.vision}</p>
           </div>
         </div>
       </Section>
@@ -49,8 +48,7 @@ export default async function AboutPage() {
           {a.method?.map((m, i, all) => (
             <li key={m.title} className="relative">
               <span aria-hidden className={`relative z-10 block h-[15px] w-[15px] rounded-full border-[3px] border-white ${i === all.length - 1 ? "bg-amber" : "bg-signal"} shadow-[0_0_0_1px_rgb(11_37_69/0.15)]`} />
-              <p className="mt-6 font-mono text-[12px] font-medium tracking-[0.14em] text-muted">STEP {String(i + 1).padStart(2, "0")}</p>
-              <h3 className="mt-2 text-xl font-semibold tracking-tight">{m.title}</h3>
+              <h3 className="mt-6 text-2xl font-semibold tracking-tight">{m.title}</h3>
               <p className="mt-3 leading-7">{m.text}</p>
             </li>
           ))}
@@ -63,9 +61,8 @@ export default async function AboutPage() {
         <div className="grid gap-12 lg:grid-cols-[380px_1fr] lg:gap-16">
           <FounderPortrait photo={a.founderPhoto} name={a.founderName} className="max-w-sm lg:max-w-none" />
           <div className="lg:pt-2">
-            <Eyebrow>Founder</Eyebrow>
-            <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-[2.4rem] sm:leading-[1.12]">{a.founderName}</h2>
-            {a.founderRole && <p className="mt-2 text-lg text-muted">{a.founderRole}</p>}
+            <h2 className="text-[2.25rem] font-semibold leading-[1.1] tracking-tight sm:text-5xl">{a.founderName}</h2>
+            {a.founderRole && <p className="mt-4 font-display text-xl font-medium tracking-tight text-ink/80 sm:text-[1.6rem]">{a.founderRole}</p>}
             {a.founderBio && <p className="mt-6 max-w-[64ch] text-lg leading-8">{a.founderBio}</p>}
             <ul className="mt-8 max-w-[72ch] divide-y divide-line border-y border-line">
               {a.founderCredentials?.map((c) => (

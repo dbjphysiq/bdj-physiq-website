@@ -14,7 +14,7 @@ export default async function ContactPage() {
   );
   return (
     <>
-      <PageHero eyebrow="Contact" title={s.ctaHeading} intro={s.ctaBody} />
+      <PageHero title={s.ctaHeading} intro={s.ctaBody} />
       <Container className="grid gap-16 py-16 sm:py-20 lg:grid-cols-[1.25fr_1fr]">
         <div>
           {process.env.DATABASE_URL ? (
@@ -31,7 +31,7 @@ export default async function ContactPage() {
             {" "}We reply in English or French. Tell us the decision you want to make, and we will tell you whether your data can support it.
           </p>
           <div className="mt-12 border-t border-line pt-10">
-            <h2 className="font-mono text-[12px] font-medium uppercase tracking-[0.14em] text-muted">What happens next</h2>
+            <h2 className="text-3xl font-semibold tracking-tight">What happens next</h2>
             <ol className="mt-6 space-y-7">
               {[
                 ["Send one paragraph", "Tell us the decision or process you want to improve, in English or French."],
@@ -53,24 +53,24 @@ export default async function ContactPage() {
         </div>
         <dl className="grid content-start gap-px overflow-hidden rounded-2xl border border-line bg-line">
           <div className="bg-white p-6">
-            <dt className="font-mono text-[12px] uppercase tracking-[0.14em] text-muted">Email</dt>
-            <dd className="mt-2"><a className="break-all text-[17px] font-medium text-signal hover:underline" href={`mailto:${s.contactEmail}`}>{s.contactEmail}</a></dd>
+            <dt className="text-lg font-semibold text-ink">Email</dt>
+            <dd className="mt-2"><a className="break-all text-base font-medium text-signal hover:underline" href={`mailto:${s.contactEmail}`}>{s.contactEmail}</a></dd>
           </div>
           {s.contactPhone && (
             <div className="bg-white p-6">
-              <dt className="font-mono text-[12px] uppercase tracking-[0.14em] text-muted">Phone and WhatsApp</dt>
-              <dd className="mt-2"><a className="text-[17px] font-medium text-signal hover:underline" href={`tel:${s.contactPhone.replace(/\s/g, "")}`}>{s.contactPhone}</a></dd>
+              <dt className="text-lg font-semibold text-ink">Phone and WhatsApp</dt>
+              <dd className="mt-2"><a className="text-base font-medium text-signal hover:underline" href={`tel:${s.contactPhone.replace(/\s/g, "")}`}>{s.contactPhone}</a></dd>
             </div>
           )}
           {s.location && (
             <div className="bg-white p-6">
-              <dt className="font-mono text-[12px] uppercase tracking-[0.14em] text-muted">Office</dt>
-              <dd className="mt-2 text-[17px] text-ink">{s.location}</dd>
+              <dt className="text-lg font-semibold text-ink">Office</dt>
+              <dd className="mt-2 text-base text-ink">{s.location}</dd>
             </div>
           )}
           <div className="bg-white p-6">
-            <dt className="font-mono text-[12px] uppercase tracking-[0.14em] text-muted">Working hours</dt>
-            <dd className="mt-2 leading-7 text-ink">
+            <dt className="text-lg font-semibold text-ink">Working hours</dt>
+            <dd className="mt-2 leading-7">
               West Africa Time (UTC+1, no daylight saving). Our afternoons overlap US Eastern mornings, and we share the European working day.
             </dd>
           </div>

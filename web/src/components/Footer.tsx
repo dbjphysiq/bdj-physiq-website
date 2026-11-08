@@ -20,7 +20,7 @@ export function Footer({ settings, services = [] }: { settings: SiteSettings; se
         </div>
 
         <nav aria-label="Footer: company" className="text-[15px]">
-          <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-white">Company</p>
+          <p className="text-[17px] font-semibold text-white">Company</p>
           <ul className="mt-5 space-y-3">
             <li><Link href="/about" className="hover:text-white">About and method</Link></li>
             <li><Link href="/about#founder" className="hover:text-white">Founder</Link></li>
@@ -31,7 +31,7 @@ export function Footer({ settings, services = [] }: { settings: SiteSettings; se
 
         {core.length > 0 && (
           <nav aria-label="Footer: services" className="text-[15px]">
-            <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-white">Services</p>
+            <p className="text-[17px] font-semibold text-white">Services</p>
             <ul className="mt-5 space-y-3">
               {core.map((s) => (
                 <li key={s.slug}><Link href={`/services/${s.slug}`} className="hover:text-white">{s.title}</Link></li>
@@ -41,7 +41,7 @@ export function Footer({ settings, services = [] }: { settings: SiteSettings; se
         )}
 
         <div className="text-[15px]">
-          <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-white">Contact</p>
+          <p className="text-[17px] font-semibold text-white">Contact</p>
           <ul className="mt-5 space-y-3">
             <li><a href={`mailto:${settings.contactEmail}`} className="break-all hover:text-white">{settings.contactEmail}</a></li>
             {settings.contactPhone && <li><a href={`tel:${settings.contactPhone.replace(/\s/g, "")}`} className="hover:text-white">{settings.contactPhone}</a></li>}
