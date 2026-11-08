@@ -19,7 +19,9 @@ export function FounderPortrait({
 
   if (src) {
     return (
-      <div className={`relative overflow-hidden rounded-2xl bg-ink ${className}`}>
+      // self-start: inside a grid row the frame would otherwise stretch to the
+      // height of the text column beside it, leaving an empty band under the photo.
+      <div className={`relative self-start overflow-hidden rounded-2xl bg-ink ${className}`}>
         <Image
           src={src}
           alt={photo?.alt ?? `Portrait of ${name}`}
@@ -35,7 +37,7 @@ export function FounderPortrait({
   }
 
   return (
-    <div className={`relative aspect-[4/5] overflow-hidden rounded-2xl bg-night ${className}`} role="img" aria-label={`${name}, DBJ PhysIQ brand mark`}>
+    <div className={`relative aspect-[4/5] self-start overflow-hidden rounded-2xl bg-night ${className}`} role="img" aria-label={`${name}, DBJ PhysIQ brand mark`}>
       <div
         aria-hidden
         className="absolute inset-0 opacity-60"
