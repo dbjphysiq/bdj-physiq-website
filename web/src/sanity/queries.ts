@@ -9,7 +9,7 @@ export const SITE_SETTINGS_QUERY = defineQuery(`*[_type == "siteSettings"][0]{
 }`);
 
 export const ABOUT_QUERY = defineQuery(`*[_type == "aboutPage"][0]{
-  heading, mission, vision,
+  heading, intro, mission, vision,
   approach[]{title, text}, method[]{title, text}, values[]{title, text},
   founderName, founderRole, founderBio, founderCredentials, publicationUrl,
   "founderPhoto": founderPhoto{asset, alt, hotspot, crop},
@@ -17,14 +17,14 @@ export const ABOUT_QUERY = defineQuery(`*[_type == "aboutPage"][0]{
 }`);
 
 const SERVICE_FIELDS = `
-  title, "slug": slug.current, category, order, tagline, whyNow, statusNote,
+  title, "slug": slug.current, family, order, tagline, summary, whyNow, statusNote,
   cardBullets, problem, features, benefits, audience, ctaLabel,
   sources[]{label, url}
 `;
 
-export const SERVICES_QUERY = defineQuery(`*[_type == "service" && defined(slug.current)] | order(order asc){${SERVICE_FIELDS}}`);
+export const SERVICES_QUERY = defineQuery(`*[_type == "service" && defined(slug.current) && defined(family)] | order(order asc){${SERVICE_FIELDS}}`);
 
-export const SERVICE_QUERY = defineQuery(`*[_type == "service" && slug.current == $slug][0]{${SERVICE_FIELDS}}`);
+export const SERVICE_QUERY = defineQuery(`*[_type == "service" && defined(family) && slug.current == $slug][0]{${SERVICE_FIELDS}}`);
 
 export const POSTS_QUERY = defineQuery(`*[_type == "post" && defined(slug.current)] | order(publishedAt desc){
   title, "slug": slug.current, excerpt, publishedAt

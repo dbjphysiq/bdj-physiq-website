@@ -4,7 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AssistantWidget } from "@/components/AssistantWidget";
-import { getServices, getSiteSettings } from "@/lib/content";
+import { getSiteSettings } from "@/lib/content";
 
 const grotesk = Space_Grotesk({ subsets: ["latin"], weight: ["500", "600", "700"], variable: "--font-grotesk", display: "swap" });
 const plex = IBM_Plex_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-plex", display: "swap" });
@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const [settings, services] = await Promise.all([getSiteSettings(), getServices()]);
+  const settings = await getSiteSettings();
   return (
     <html lang="en-GB" className={`${grotesk.variable} ${plex.variable} ${plexMono.variable}`}>
       <body>
@@ -41,7 +41,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         </a>
         <Header />
         <main id="main">{children}</main>
-        <Footer settings={settings} services={services} />
+        <Footer settings={settings} />
         {process.env.ANTHROPIC_API_KEY ? <AssistantWidget /> : null}
       </body>
     </html>

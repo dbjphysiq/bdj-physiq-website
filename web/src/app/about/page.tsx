@@ -4,11 +4,11 @@ import { Button } from "@/components/Button";
 import { FounderPortrait } from "@/components/FounderPortrait";
 import { PageHero } from "@/components/PageHero";
 import { getAbout } from "@/lib/content";
-import { PAPER } from "@/lib/site";
+import { METHODS_NOTE, PAPER } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About and method",
-  description: "Mission, method and founder of DBJ PhysIQ Technologies.",
+  description: "DBJ PhysIQ Technologies: a physics-informed AI company working with manufacturers and public institutions. Mission, method and founder.",
   alternates: { canonical: "/about" },
 };
 
@@ -29,7 +29,7 @@ export default async function AboutPage() {
   const a = await getAbout();
   return (
     <>
-      <PageHero title={a.heading} />
+      <PageHero title={a.heading} intro={a.intro} />
 
       <Section border={false}>
         <div className="grid gap-12 md:grid-cols-2 md:gap-16">
@@ -75,6 +75,7 @@ export default async function AboutPage() {
                 </li>
               ))}
             </ul>
+            <p className="mt-8 max-w-[64ch] rounded-xl border-l-2 border-amber bg-paper px-5 py-4 leading-7 text-ink">{METHODS_NOTE}</p>
             {a.publicationUrl && (
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Button href={a.publicationUrl} variant="secondary">Read the JASA paper</Button>

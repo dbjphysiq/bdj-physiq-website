@@ -8,22 +8,14 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { UncertaintyChart } from "@/components/UncertaintyChart";
 import { WaveField } from "@/components/WaveField";
 import { getAbout, getServices, getSiteSettings } from "@/lib/content";
-import { AFFILIATIONS, PAPER, PILOT } from "@/lib/site";
+import { CREDIBILITY, DOORS, FAMILIES, FLAGSHIP, PACKAGED, PAPER, PILOT, POSITIONING_NOTE, STRAPLINE, serviceHref } from "@/lib/site";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
-const START_WITH = [
-  ["Your plant or factory", "/services/industrial-ai-process-modelling"],
-  ["Your data migration", "/services/data-engineering-migration"],
-  ["Your agency, programme or fund", "/services/ai-governance-advisory"],
-  ["Training for your team", "/services/physiq-academy"],
-] as const;
-
 export default async function HomePage() {
   const [s, services, about] = await Promise.all([getSiteSettings(), getServices(), getAbout()]);
-  const core = services.filter((x) => x.category === "core");
-  const accelerator = services.find((x) => x.category === "accelerator");
-  const innovation = services.filter((x) => x.category === "innovation");
+  const flagship = services.find((x) => x.slug === FLAGSHIP.slug);
+  const packaged = services.filter((x) => x.family === "packaged");
 
   return (
     <>
@@ -75,31 +67,25 @@ export default async function HomePage() {
           </figure>
         </Container>
 
-        {/* Audience paths */}
+        {/* Strapline */}
         <div className="border-t border-white/10 bg-night/40">
-          <Container className="flex flex-wrap items-center gap-x-3 gap-y-3 py-5 text-[15px]">
-            <span className="mr-2 text-base font-semibold text-white">Start with</span>
-            {START_WITH.map(([label, href]) => (
-              <Link key={href} href={href}
-                className="rounded-full border border-white/15 px-4 py-1.5 text-mist transition-colors hover:border-amber/60 hover:text-white">
-                {label}
-              </Link>
-            ))}
+          <Container className="flex flex-wrap items-center gap-x-4 gap-y-2 py-5 text-[15px]">
+            <span className="font-mono text-[13px] uppercase tracking-[0.16em] text-amber">{s.motto}</span>
+            <span aria-hidden className="hidden h-4 w-px bg-white/20 sm:block" />
+            <span className="text-mist">{STRAPLINE}</span>
           </Container>
         </div>
       </section>
 
-      {/* ───────────── Founder's affiliations (not clients) ───────────── */}
-      <section aria-labelledby="affiliations-label" className="border-b border-line bg-white">
-        <Container className="grid gap-8 py-10 lg:grid-cols-[240px_1fr] lg:items-center">
-          <h2 id="affiliations-label" className="font-display text-xl font-semibold leading-7 tracking-tight text-ink">
-            The founder&apos;s training and research
-          </h2>
-          <ul className="grid grid-cols-2 gap-y-6 md:grid-cols-4">
-            {AFFILIATIONS.map((a) => (
-              <li key={a.name} className="border-l border-line pl-5">
-                <p className="font-display text-lg font-semibold tracking-tight text-ink">{a.name}</p>
-                <p className="mt-1 text-[13.5px] leading-5 text-muted">{a.detail}</p>
+      {/* ───────────── Credibility line (the founder's record; no client logos) ───────────── */}
+      <section aria-labelledby="credibility-label" className="border-b border-line bg-white">
+        <Container className="py-7">
+          <h2 id="credibility-label" className="sr-only">Credentials</h2>
+          <ul className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[14px] leading-6 text-slate lg:justify-between">
+            {CREDIBILITY.map((c) => (
+              <li key={c} className="flex items-center gap-3">
+                <span aria-hidden className="h-1 w-1 shrink-0 rounded-full bg-signal/60" />
+                {c}
               </li>
             ))}
           </ul>
@@ -107,7 +93,8 @@ export default async function HomePage() {
       </section>
 
       {/* ───────────── Value and method ───────────── */}
-      <Section eyebrow="Our method" title={s.valueHeading} intro={s.valueBody} border={false} grid>
+      <Section title={s.valueHeading} intro={s.valueBody} border={false} grid>
+        <p className="-mt-6 mb-14 max-w-2xl border-l-2 border-amber pl-4 text-lg font-medium leading-8 text-ink">{POSITIONING_NOTE}</p>
         <ol className="relative grid gap-10 md:grid-cols-3 md:gap-8">
           <span aria-hidden className="absolute left-0 right-0 top-[7px] hidden h-px bg-gradient-to-r from-signal/60 via-signal/30 to-amber/60 md:block" />
           {s.valuePillars?.map((p, i) => (
@@ -120,18 +107,66 @@ export default async function HomePage() {
         </ol>
       </Section>
 
-      {/* ───────────── Core services ───────────── */}
-      <Section tone="paper" eyebrow="Services" title="What we do"
-        intro="Six services, one standard: every result is tested, documented and handed over to your team.">
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {core.map((svc, i) => <ServiceCard key={svc.slug} service={svc} index={i} />)}
+      {/* ───────────── Two doors ───────────── */}
+      <section aria-label="Who we work with" className="border-t border-line bg-paper py-16 sm:py-20">
+        <Container className="grid gap-5 md:grid-cols-2">
+          {DOORS.map((d, i) => (
+            <article key={d.href}
+              className="group relative flex flex-col rounded-2xl border border-line bg-white p-8 transition-all duration-300 hover:-translate-y-0.5 hover:border-ink/25 hover:shadow-[0_24px_48px_-28px_rgb(11_37_69/0.35)] sm:p-10">
+              <span aria-hidden className={`h-1 w-12 rounded-full ${i === 0 ? "bg-signal" : "bg-amber"}`} />
+              <h2 className="mt-6 text-2xl font-semibold tracking-tight sm:text-[1.75rem]">{d.title}</h2>
+              <p className="mt-4 max-w-[52ch] text-lg leading-8">{d.text}</p>
+              <Link href={d.href}
+                className="mt-auto inline-flex items-center gap-1.5 pt-8 text-[15px] font-medium text-signal after:absolute after:inset-0 after:rounded-2xl after:content-[''] group-hover:text-signal-dark">
+                {d.label} <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+              </Link>
+            </article>
+          ))}
+        </Container>
+      </section>
+
+      {/* ───────────── Flagship and the nine services ───────────── */}
+      <Section border={false} title={flagship?.title ?? "Calibrated surrogate models"} intro={flagship?.problem}>
+        <div className="grid gap-14 lg:grid-cols-[1fr_1.4fr] lg:gap-14">
+          <div>
+            {flagship?.features && (
+              <ul className="space-y-4">
+                {flagship.features.map((f) => (
+                  <li key={f} className="grid grid-cols-[22px_1fr] gap-3 text-[17px] leading-7">
+                    <svg aria-hidden viewBox="0 0 20 20" className="mt-1 h-5 w-5 text-signal"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            )}
+            <div className="mt-10 flex flex-wrap gap-3">
+              <Button href={FLAGSHIP.path} arrow>See how we calibrate a model</Button>
+              <Button href={`https://doi.org/${PAPER.doi}`} variant="secondary">Read the paper</Button>
+            </div>
+          </div>
+          <div className="rounded-2xl border border-line bg-paper p-7 sm:p-9">
+            <h3 className="text-2xl font-semibold tracking-tight">Nine services in three families</h3>
+            <div className="mt-6 grid gap-7 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              {FAMILIES.map((f) => (
+                <div key={f.key}>
+                  <p className="text-[17px] font-semibold leading-6 text-ink">
+                    <Link href={`/services#${f.key}`} className="hover:text-signal">{f.title}</Link>
+                  </p>
+                  <ul className="mt-3 space-y-2 text-[15px] leading-6">
+                    {services.filter((x) => x.family === f.key).map((x) => (
+                      <li key={x.slug}><Link href={serviceHref(x.slug)} className="text-slate underline decoration-line underline-offset-4 hover:text-ink hover:decoration-signal">{x.title}</Link></li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 border-t border-line pt-6">
+              <Link href="/services" className="inline-flex items-center gap-1.5 text-[15px] font-medium text-signal hover:text-signal-dark">
+                All services and how we work <span aria-hidden>→</span>
+              </Link>
+            </div>
+          </div>
         </div>
-        {accelerator && (
-          <p className="mt-12 max-w-3xl leading-7">
-            <Link href={`/services/${accelerator.slug}`} className="font-medium text-ink underline decoration-line decoration-2 underline-offset-[6px] hover:decoration-signal">{accelerator.title}</Link>
-            <span>. {accelerator.tagline} {accelerator.cardBullets?.[0]} are in development.</span>
-          </p>
-        )}
       </Section>
 
       {/* ───────────── Research ───────────── */}
@@ -205,12 +240,11 @@ export default async function HomePage() {
         </div>
       </Section>
 
-      {/* ───────────── Innovation track ───────────── */}
-      {innovation.length > 0 && (
-        <Section tone="paper" eyebrow="Open to early partners" title="New services for the 2026 to 2028 deadlines"
-          intro="New rules and new technology are changing what industry and institutions must prove. We shape each of these services with the first organisations that join.">
-          <div className="grid gap-5 sm:grid-cols-2">
-            {innovation.map((svc) => <ServiceCard key={svc.slug} service={svc} />)}
+      {/* ───────────── Compliance programmes ───────────── */}
+      {packaged.length > 0 && (
+        <Section tone="paper" title={PACKAGED.title} intro={PACKAGED.intro}>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {packaged.map((svc) => <ServiceCard key={svc.slug} service={svc} bullets="none" />)}
           </div>
         </Section>
       )}
@@ -218,7 +252,7 @@ export default async function HomePage() {
       {/* ───────────── Why now ───────────── */}
       {s.stats && s.stats.length > 0 && (
         <Section eyebrow="Why this matters now" title="The cost of getting it wrong is rising." border={false}>
-          <dl className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+          <dl className={`grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 ${s.stats.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
             {s.stats.map((st) => (
               <div key={st.value} className="flex flex-col bg-white p-7">
                 <dt className="font-display text-[2.6rem] font-semibold leading-none tracking-tight text-ink">{st.value}</dt>
@@ -244,7 +278,7 @@ export default async function HomePage() {
           {[
             ["Overlapping hours", "We work on West Africa Time (UTC+1). Our afternoons overlap US Eastern mornings, and we share the European working day. English and French."],
             ["A registered company", "Contracts and invoices come from DBJ PhysIQ Technologies SARL, a company registered under OHADA business law."],
-            ["Your data stays with you", "We work in your environment, under your access controls. Our security controls follow ISO/IEC 27001, with certification planned for FY2029."],
+            ["Your data stays with you", "We work in your environment, under your access controls. Where data has to move, we work to your data processing terms."],
             ["Documented hand-over", "Every model has a named owner and full documentation, so your own team can run it after we hand it over."],
           ].map(([title, text], i) => (
             <div key={title} className="rounded-2xl border border-line bg-white p-7">
@@ -294,7 +328,7 @@ export default async function HomePage() {
             <p className="mt-6 max-w-xl text-lg leading-8">{s.ctaBody}</p>
           </div>
           <div className="flex flex-col items-start gap-4 lg:items-end">
-            <Button href="/contact" variant="accent" arrow>{s.primaryCta.label}</Button>
+            <Button href="/contact" variant="accent" arrow>Book a 30-minute scoping call</Button>
             <a href={`mailto:${s.contactEmail}`} className="text-[15px] text-mist/80 underline-offset-4 hover:text-white hover:underline">
               or email {s.contactEmail}
             </a>

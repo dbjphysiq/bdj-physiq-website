@@ -41,3 +41,84 @@ export const PAPER = {
 
 /** West Africa Time (UTC+1, no daylight saving) against client time zones. */
 export const HOURS_LINE = "English and French · hours overlap US Eastern and European time";
+
+/* ───────────── Service structure and page copy ───────────── */
+
+/** The flagship service has its own page instead of a standard service page. */
+export const FLAGSHIP = {
+  slug: "calibrated-surrogate-models",
+  path: "/calibrated-surrogates",
+};
+
+/** Link to a service: the flagship goes to its own page. */
+export const serviceHref = (slug: string) => (slug === FLAGSHIP.slug ? FLAGSHIP.path : `/services/${slug}`);
+
+/** The three service families plus the packaged compliance programmes, in page order. */
+export const FAMILIES = [
+  {
+    key: "engineering",
+    title: "Engineering and industrial AI",
+    intro: "For manufacturers, engineering teams and R&D groups working with physical processes.",
+  },
+  {
+    key: "data",
+    title: "Data and analytics",
+    intro: "For organisations whose decisions depend on numbers they cannot currently trace.",
+  },
+  {
+    key: "governance",
+    title: "Governance, institutions and capability",
+    intro: "For ministries, regulators, funds, programmes and companies selling into regulated markets.",
+  },
+] as const;
+
+export const PACKAGED = {
+  key: "packaged",
+  title: "Built for the 2026 to 2028 compliance deadlines",
+  intro: "Fixed-scope programmes aimed at obligations with a date attached.",
+};
+
+/** One line under the homepage hero. */
+export const STRAPLINE = "Delivered in French and English, by the people who built it.";
+
+/** Closing line of the homepage positioning block. */
+export const POSITIONING_NOTE = "Every model we deliver reports how far it should be trusted. Your data stays in your systems.";
+
+/** Homepage credibility line: plain text, no logos. */
+export const CREDIBILITY = [
+  "Peer-reviewed in the Journal of the Acoustical Society of America",
+  "Associate Researcher, CNRS joint research unit",
+  "National AI strategy drafting",
+  "Published methods with a reproduction script",
+];
+
+/** The two audience routes on the homepage. */
+export const DOORS = [
+  {
+    title: "For manufacturers and engineering teams",
+    text: "Faster design cycles without losing traceability. Process models, calibrated surrogates, and measurement campaigns designed to answer the question you actually have.",
+    label: "Engineering and industrial AI",
+    href: "/services#engineering",
+  },
+  {
+    title: "For institutions, programmes and funds",
+    text: "Evidence you can defend. Data systems, analytics, AI governance and independent evaluation, built so your own team can run them afterwards.",
+    label: "Institutions and governance",
+    href: "/services#governance",
+  },
+];
+
+/** "How we work" commitments. The last one is shown with emphasis. */
+export const HOW_WE_WORK = [
+  "A written scope before any work starts. You know what you are getting and what you are not.",
+  "Fixed-price pilots of four to eight weeks. No open-ended engagements.",
+  "A go or no-go decision at the end of the pilot, with no obligation either way.",
+  "Your data stays in your systems. Where it has to move, we work to your data processing terms.",
+  "Every forecast reports its uncertainty. A number without a bound is not a result.",
+  "Documentation an auditor can follow: inputs, method, assumptions, limits.",
+  "You keep the code. We hand over the scripts, the environment specification and the documentation, and we will train your team to run it.",
+];
+
+/** Shown beside the founder profile on the About page. */
+export const METHODS_NOTE =
+  "We publish our methods. If a claim on this site matters to your decision, ask us for the paper or the code behind it.";

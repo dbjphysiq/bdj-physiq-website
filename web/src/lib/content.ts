@@ -46,13 +46,14 @@ export type SiteSettings = {
   seoDescription?: string;
 };
 
-export type ServiceCategory = "core" | "accelerator" | "innovation";
+export type ServiceFamily = "engineering" | "data" | "governance" | "packaged";
 export type Service = {
   title: string;
   slug: string;
-  category: ServiceCategory;
+  family: ServiceFamily;
   order: number;
   tagline: string;
+  summary?: string;
   whyNow?: string;
   statusNote?: string;
   cardBullets?: string[];
@@ -66,6 +67,7 @@ export type Service = {
 
 export type AboutPage = {
   heading: string;
+  intro?: string;
   mission: string;
   vision: string;
   approach?: TitleText[];

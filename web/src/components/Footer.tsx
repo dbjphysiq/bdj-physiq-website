@@ -1,11 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Service, SiteSettings } from "@/lib/content";
-import { HOURS_LINE } from "@/lib/site";
+import type { SiteSettings } from "@/lib/content";
+import { FAMILIES, FLAGSHIP, HOURS_LINE } from "@/lib/site";
 import { Container } from "./Container";
 
-export function Footer({ settings, services = [] }: { settings: SiteSettings; services?: Service[] }) {
-  const core = services.filter((s) => s.category === "core").slice(0, 6);
+const SERVICE_LINKS = [
+  { label: "Calibrated surrogate models", href: FLAGSHIP.path },
+  ...FAMILIES.map((f) => ({ label: f.title, href: `/services#${f.key}` })),
+  { label: "Compliance programmes", href: "/services#packaged" },
+];
+
+export function Footer({ settings }: { settings: SiteSettings }) {
   return (
     <footer className="on-dark relative isolate overflow-hidden border-t border-white/10 bg-night-2 text-mist">
       <div aria-hidden className="bg-grid-night absolute inset-0 -z-10 [mask-image:linear-gradient(to_top,black,transparent)]" />
@@ -29,16 +34,14 @@ export function Footer({ settings, services = [] }: { settings: SiteSettings; se
           </ul>
         </nav>
 
-        {core.length > 0 && (
-          <nav aria-label="Footer: services" className="text-[15px]">
-            <p className="text-[17px] font-semibold text-white">Services</p>
-            <ul className="mt-5 space-y-3">
-              {core.map((s) => (
-                <li key={s.slug}><Link href={`/services/${s.slug}`} className="hover:text-white">{s.title}</Link></li>
-              ))}
-            </ul>
-          </nav>
-        )}
+        <nav aria-label="Footer: services" className="text-[15px]">
+          <p className="text-[17px] font-semibold text-white">Services</p>
+          <ul className="mt-5 space-y-3">
+            {SERVICE_LINKS.map((l) => (
+              <li key={l.href}><Link href={l.href} className="hover:text-white">{l.label}</Link></li>
+            ))}
+          </ul>
+        </nav>
 
         <div className="text-[15px]">
           <p className="text-[17px] font-semibold text-white">Contact</p>
@@ -52,7 +55,7 @@ export function Footer({ settings, services = [] }: { settings: SiteSettings; se
       </Container>
       <div className="border-t border-white/10">
         <Container className="py-6 text-sm text-mist/70">
-          © {new Date().getFullYear()} {settings.legalLine}
+          Copyright ©{new Date().getFullYear()} {settings.legalLine}
         </Container>
       </div>
     </footer>

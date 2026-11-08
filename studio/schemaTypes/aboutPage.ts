@@ -8,6 +8,7 @@ export const aboutPage = defineType({
   icon: UsersIcon,
   fields: [
     defineField({ name: "heading", type: "string", validation: (r) => r.required() }),
+    defineField({ name: "intro", title: "Company introduction (under the page title)", type: "text", rows: 3 }),
     defineField({ name: "mission", title: "Mission (one sentence)", type: "text", rows: 3, validation: (r) => r.required() }),
     defineField({ name: "vision", type: "text", rows: 2 }),
     defineField({ name: "approach", title: "How we earn trust", type: "array", of: [{ type: "titleText" }] }),

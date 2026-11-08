@@ -4,7 +4,7 @@ import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { DarkBreadcrumb, PageHero } from "@/components/PageHero";
 import { getService, getServices } from "@/lib/content";
-import { PILOT } from "@/lib/site";
+import { FAMILIES, FLAGSHIP, PACKAGED, PILOT } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -12,7 +12,8 @@ type Props = { params: Promise<{ slug: string }> };
 // Sanity later are rendered on first visit (dynamicParams defaults to true).
 export async function generateStaticParams() {
   const services = await getServices();
-  return services.map((s) => ({ slug: s.slug }));
+  // The flagship has its own page (/calibrated-surrogates); its service URL redirects there.
+  return services.filter((s) => s.slug !== FLAGSHIP.slug).map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -44,15 +45,15 @@ export default async function ServicePage({ params }: Props) {
   if (!s) notFound();
 
   const badge =
-    s.category === "innovation" ? "New service" : s.category === "accelerator" ? "In development" : "Core service";
+    s.family === "packaged" ? "Compliance programme" : FAMILIES.find((f) => f.key === s.family)?.title;
+  const backHref = `/services#${s.family === "packaged" ? PACKAGED.key : s.family}`;
 
   return (
     <>
       <PageHero
-        breadcrumb={<DarkBreadcrumb items={[{ label: "Services", href: "/services" }, { label: s.title }]} />}
-        meta={badge}
-        title={s.title}
-        intro={s.tagline}
+        breadcrumb={<DarkBreadcrumb items={[{ label: "Services", href: "/services" }, { label: badge ?? "Services", href: backHref }, { label: s.title }]} />}
+                title={s.title}
+        intro={s.summary ?? s.tagline}
       >
         {(s.whyNow || s.statusNote) && (
           <div className="max-w-2xl space-y-4">
@@ -72,7 +73,7 @@ export default async function ServicePage({ params }: Props) {
             <h2 className="text-2xl font-semibold tracking-tight">The problem we solve</h2>
             <p className="mt-6 max-w-[68ch] text-lg leading-8">{s.problem}</p>
           </section>
-          <List title="Features and deliverables" items={s.features} />
+          <List title="What we deliver" items={s.features} />
           <List title="Benefits and business impact" items={s.benefits} />
         </div>
         <aside className="space-y-8 lg:sticky lg:top-28 lg:self-start">
