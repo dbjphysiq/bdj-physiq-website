@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
@@ -8,6 +9,8 @@ import { UncertaintyChart } from "@/components/UncertaintyChart";
 import { WaveField } from "@/components/WaveField";
 import { getAbout, getServices, getSiteSettings } from "@/lib/content";
 import { AFFILIATIONS, PAPER, PILOT } from "@/lib/site";
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 const START_WITH = [
   ["Your plant or factory", "/services/industrial-ai-process-modelling"],

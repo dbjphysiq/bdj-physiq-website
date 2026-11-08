@@ -22,10 +22,11 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(siteUrl),
     title: { default: title, template: `%s | ${s.siteTitle}` },
     description: s.seoDescription,
-    alternates: { canonical: "/" },
+    // No site-wide canonical: each page declares its own (a canonical here
+    // would be inherited by every page and point them all at the homepage).
     icons: { icon: "/icon.svg" },
     // The social image comes from app/opengraph-image.tsx.
-    openGraph: { siteName: s.siteTitle, type: "website", locale: "en_GB", url: "/", title, description: s.seoDescription },
+    openGraph: { siteName: s.siteTitle, type: "website", locale: "en_GB", title, description: s.seoDescription },
     twitter: { card: "summary_large_image", title: s.siteTitle, description: s.seoDescription },
   };
 }

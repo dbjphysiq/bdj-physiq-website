@@ -6,7 +6,11 @@ import { PageHero } from "@/components/PageHero";
 import { getAbout } from "@/lib/content";
 import { PAPER } from "@/lib/site";
 
-export const metadata: Metadata = { title: "About and method", description: "Mission, method and founder of DBJ PhysIQ Technologies." };
+export const metadata: Metadata = {
+  title: "About and method",
+  description: "Mission, method and founder of DBJ PhysIQ Technologies.",
+  alternates: { canonical: "/about" },
+};
 
 function Columns({ items }: { items?: { title: string; text: string }[] }) {
   return (

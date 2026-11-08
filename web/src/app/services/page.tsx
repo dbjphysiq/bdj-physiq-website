@@ -6,6 +6,7 @@ import { PageHero } from "@/components/PageHero";
 import { getServices } from "@/lib/content";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/services" },
   title: "Services",
   description: "Industrial AI, data engineering, analytics, AI solutions, AI governance and training, plus four new services for the 2026 to 2028 deadlines.",
 };

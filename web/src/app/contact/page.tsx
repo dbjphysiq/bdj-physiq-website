@@ -4,7 +4,11 @@ import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { getSiteSettings } from "@/lib/content";
 
-export const metadata: Metadata = { title: "Contact", description: "Book a 30-minute scoping call with DBJ PhysIQ Technologies." };
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Book a 30-minute scoping call with DBJ PhysIQ Technologies.",
+  alternates: { canonical: "/contact" },
+};
 
 export default async function ContactPage() {
   const s = await getSiteSettings();

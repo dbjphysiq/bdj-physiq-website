@@ -14,8 +14,9 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const p = await getPost((await params).slug);
-  return p ? { title: p.title, description: p.excerpt } : {};
+  const { slug } = await params;
+  const p = await getPost(slug);
+  return p ? { title: p.title, description: p.excerpt, alternates: { canonical: `/insights/${slug}` } } : {};
 }
 
 const components: PortableTextComponents = {

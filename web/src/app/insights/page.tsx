@@ -4,7 +4,11 @@ import { Container } from "@/components/Container";
 import { PageHero } from "@/components/PageHero";
 import { getPosts } from "@/lib/content";
 
-export const metadata: Metadata = { title: "Insights", description: "Notes on physics-informed AI, data engineering and responsible AI." };
+export const metadata: Metadata = {
+  title: "Insights",
+  description: "Notes on physics-informed AI, data engineering and responsible AI.",
+  alternates: { canonical: "/insights" },
+};
 
 const fmt = (d: string) => new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 
